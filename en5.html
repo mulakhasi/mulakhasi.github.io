@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>اختبار إنجليزي خامس</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Inter:wght@500;700&display=swap">
+<style>
+/* Layout: one question card at a time, lesson filter chips on top, result screen at the end */
+:root{--bg:#f6f8f4;--card:#fff;--ink:#1d2b2a;--muted:#5d6b68;--line:#d6ded8;--teal:#0f6e68;--teal-soft:#e2f1ef;--good:#2f7d1f;--good-soft:#e7f4df;--bad:#b3261e;--bad-soft:#fbe6e4;--display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111817;--card:#1a2322;--ink:#e6eeec;--muted:#9fb0ad;--line:#2f3d3b;--teal:#5cc8bd;--teal-soft:#183331;--good:#8ccf68;--good-soft:#1f2e18;--bad:#f08a80;--bad-soft:#3a1d1a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111817;--card:#1a2322;--ink:#e6eeec;--muted:#9fb0ad;--line:#2f3d3b;--teal:#5cc8bd;--teal-soft:#183331;--good:#8ccf68;--good-soft:#1f2e18;--bad:#f08a80;--bad-soft:#3a1d1a;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);direction:rtl;font-size:17px;line-height:1.8}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:24px 60px;display:grid;gap:18px}
+h1,h2{font-family:var(--display);margin:0;line-height:1.4;text-wrap:balance}
+h1{font-size:clamp(1.6rem,5vw,2.1rem)}
+.sub{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--display);border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;border-radius:99px;cursor:pointer;font-size:.92rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:14px}
+.tag{font-size:.8rem;color:var(--teal);font-family:var(--display)}
+.q{font-family:var(--display);font-size:1.2rem;line-height:1.7}
+.opts{display:grid;gap:8px}
+.opt{text-align:start;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px;align-items:baseline}
+.opt b{font-family:var(--display);color:var(--muted);min-width:1.4em}
+.opt:hover:not([disabled]){border-color:var(--teal)}
+.opt:focus-visible,.btn:focus-visible,.chip:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt[disabled]{cursor:default}
+.fb{border-radius:10px;padding:10px 14px}
+.fb.ok{background:var(--good-soft);color:var(--good)}
+.fb.no{background:var(--bad-soft);color:var(--bad)}
+.fb p{color:var(--ink);margin:4px 0 0}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font-family:var(--display);font-size:1rem;border:0;border-radius:10px;padding:10px 20px;cursor:pointer;background:var(--teal);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.score{font-family:var(--display);font-size:3rem;color:var(--teal);font-variant-numeric:tabular-nums;line-height:1.2}
+.per{display:grid;gap:6px}
+.per div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding-block:4px;font-variant-numeric:tabular-nums}
+.review{display:grid;gap:10px}
+.rv{border-inline-start:4px solid var(--bad);background:var(--card);border-radius:8px;padding:8px 12px}
+.rv small{color:var(--muted)}
+.en{display:block;direction:ltr;text-align:left;font-family:Inter,sans-serif;font-weight:600;color:var(--teal);margin-top:6px;unicode-bidi:isolate}
+span.en{display:inline;margin:0;color:inherit}
+.opt span{font-family:Inter,var(--body)}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:6px"><a href="index.html" style="color:inherit;font-size:.85rem;text-decoration:none;opacity:.7">→ كل الاختبارات</a><span class="tag"><b>ملخّصي</b> · English · الصف الخامس · Top Goal 2 · الجزء الأول</span><h1>اختبر نفسك</h1><p class="sub">اختر الوحدة أو القسم (مفردات · قواعد · قصص وقراءة)، وجاوب على الأسئلة واحدًا واحدًا. بعد كل إجابة يظهر لك الصح والشرح، وفي النهاية درجتك والأسئلة اللي تحتاج تراجعها.</p></header>
+<div class="chips" id="chips"></div>
+<main id="app"></main>
+</div>
+<script>
+const QS=[
+// 1 Welcome vocab
+[1,"ما معنى كلمة:<div class='en'>calendar</div>",["تقويم","تاريخ","شهر","ساعة"],0,"<span class='en'>The date is on the school calendar.</span>"],
+[1,"ما معنى كلمة:<div class='en'>late</div>",["متأخر","مبكر","متعب","طويل"],0,"<span class='en'>Why are you late?</span>"],
+[1,"ما معنى كلمة:<div class='en'>early</div>",["مبكر","متأخر","سريع","قديم"],0,"<span class='en'>I think it's early in September.</span>"],
+[1,"اختر الصحيح:<div class='en'>Class started ten minutes ___!</div>",["ago","late","early","month"],0,"<span class='en'>ago</span> = منذ / قبل."],
+[1,"ما معنى كلمة:<div class='en'>snail</div>",["حلزون","أسد","قوس قزح","جبل"],0,"<span class='en'>snail</span> = حلزون."],
+[1,"ما معنى كلمة:<div class='en'>rainbow</div>",["قوس قزح","مطر","جبل","سحابة"],0,"<span class='en'>rainbow</span> = قوس قزح."],
+[1,"ما معنى كلمة:<div class='en'>tired</div>",["متعب","طويل","سعيد","متأخر"],0,"<span class='en'>a tired child</span>"],
+[1,"الشهر التاسع في السنة:",["September","November","October","August"],0,"<span class='en'>September</span> = سبتمبر."],
+[1,"الشهر الذي يأتي بعد January:",["February","March","December","June"],0,"<span class='en'>January → February</span>."],
+[1,"كيف يُكتب الرقم 421؟",["four hundred twenty-one","four hundreds twenty-one","forty-two one","four hundred and twelve"],0,"<span class='en'>hundred</span> لا تأخذ s."],
+[1,"كيف يُكتب الرقم 508؟",["five hundred eight","five hundred eighty","fifty-eight","five thousand eight"],0,"<span class='en'>508 = five hundred eight</span>."],
+[1,"ما معنى <span class='en'>one thousand</span>؟",["1,000","100","10,000","110"],0,"<span class='en'>1,000 = one thousand</span>."],
+// 2 Welcome grammar
+[2,"اختر الصحيح:<div class='en'>___ students are in your class?</div>",["How many","How long","How much","How old"],0,"<span class='en'>students</span> جمع معدود ← <span class='en'>How many</span>."],
+[2,"اختر الصحيح:<div class='en'>___ is the lunch break?</div>",["How long","How many","How far","What"],0,"السؤال عن المدة ← <span class='en'>How long</span>."],
+[2,"اختر الصحيح:<div class='en'>___ was your vacation?</div>",["How long","How many","Who","Which"],0,"مدة الإجازة ← <span class='en'>How long</span>."],
+[2,"اختر الصحيح:<div class='en'>___ teachers do you have this year?</div>",["How many","How long","How old","Where"],0,"عدد ← <span class='en'>How many</span>."],
+[2,"اختر الصحيح:<div class='en'>Tang ___ up on Sunday at 8 a.m.</div>",["woke","wake","waked","waking"],0,"الماضي من <span class='en'>wake</span> = <span class='en'>woke</span>."],
+[2,"اختر الصحيح:<div class='en'>He ___ pancakes with eggs for breakfast.</div>",["ate","eat","eated","eats"],0,"<span class='en'>eat → ate</span>."],
+[2,"اختر الصحيح:<div class='en'>They ___ a butterfly in the park.</div>",["saw","see","seed","seen"],0,"<span class='en'>see → saw</span>."],
+[2,"اختر الصحيح:<div class='en'>He ___ asleep at 8 p.m.</div>",["fell","fall","falled","fallen"],0,"<span class='en'>fall → fell</span>."],
+[2,"اختر الصحيح:<div class='en'>This is the ___ classroom.</div>",["biggest","bigest","bigger","most big"],0,"نكرر g: <span class='en'>big → biggest</span>."],
+[2,"اختر الصحيح:<div class='en'>This is the ___ class for me.</div>",["easiest","easyest","most easy","easier"],0,"<span class='en'>easy → easiest</span>."],
+[2,"اختر الصحيح:<div class='en'>This is the ___ class for me.</div>",["most difficult","difficultest","more difficult","difficulter"],0,"صفة طويلة ← <span class='en'>the most</span>."],
+[2,"اختر الصحيح:<div class='en'>He is the ___ student.</div>",["tallest","taller","most tall","tall"],0,"<span class='en'>the tallest</span>."],
+// 3 U1 vocab
+[3,"ما معنى كلمة:<div class='en'>enormous</div>",["ضخم جدًا","مرتب","مزعج","محظوظ"],0,"<span class='en'>The building is enormous.</span>"],
+[3,"ما معنى كلمة:<div class='en'>noisy</div>",["مزعج / صاخب","هادئ","مرتب","ودود"],0,"<span class='en'>It gets a little noisy during big events.</span>"],
+[3,"ما معنى كلمة:<div class='en'>lucky</div>",["محظوظ","مشهور","مضحك","حزين"],0,"<span class='en'>You might be lucky and win a prize!</span>"],
+[3,"ما معنى كلمة:<div class='en'>popular</div>",["مشهور / محبوب","مهم","مرتب","ممتاز"],0,"<span class='en'>the most popular activity</span>"],
+[3,"ما معنى كلمة:<div class='en'>tidy</div>",["مرتّب","فوضوي","ضخم","مخيف"],0,"<span class='en'>tidy</span> = مرتب، وعكسها <span class='en'>untidy</span>."],
+[3,"ما معنى كلمة:<div class='en'>friendly</div>",["ودود","غاضب","متعب","غريب"],0,"<span class='en'>Everyone is friendly.</span>"],
+[3,"ما معنى كلمة:<div class='en'>important</div>",["مهم","ممتع","مدهش","خاص"],0,"<span class='en'>It's important to make sure the space is tidy.</span>"],
+[3,"ما معنى كلمة:<div class='en'>messy</div>",["فوضوي","نظيف","محظوظ","ودود"],0,"<span class='en'>messy</span> = فوضوي."],
+[3,"ما معنى كلمة:<div class='en'>excited</div>",["متحمس","خائف","متعب","حزين"],0,"<span class='en'>excited</span> = متحمس."],
+[3,"عكس <span class='en'>kind</span>:",["unkind","inkind","diskind","nokind"],0,"البادئة <span class='en'>un-</span> = not."],
+[3,"عكس <span class='en'>usual</span>:",["unusual","disusual","inusual","nonusual"],0,"<span class='en'>unusual</span> = غير عادي."],
+[3,"<span class='en'>unlucky</span> تعني:",["not lucky","very lucky","lucky again","before lucky"],0,"<span class='en'>un-</span> = not."],
+[3,"ما معنى <span class='en'>horrible</span>؟",["فظيع","رائع","ممتع","جميل"],0,"<span class='en'>After a horrible day, …</span>"],
+[3,"اختر الكلمة المناسبة:<div class='en'>Normally I have a very ___ room because I don't like cleaning it.</div>",["untidy","tidy","lucky","friendly"],0,"لا تحب التنظيف ← غرفة غير مرتبة."],
+// 4 U1 grammar
+[4,"اختر الصحيح:<div class='en'>My team ___ last Saturday.</div>",["won","win","wins","winning"],0,"<span class='en'>last Saturday</span> ← ماضٍ."],
+[4,"اختر الصحيح:<div class='en'>She ___ wonderful pictures. (routine)</div>",["paints","painted","paint","painting"],0,"عادة مع she ← <span class='en'>paints</span>."],
+[4,"اختر الصحيح:<div class='en'>I ___ the movie because I was busy.</div>",["didn't watch","don't watch","didn't watched","not watch"],0,"<span class='en'>didn't + فعل مجرد</span>."],
+[4,"اختر الصحيح:<div class='en'>What day ___ you go last week?</div>",["did","do","does","are"],0,"<span class='en'>last week</span> ← did."],
+[4,"اختر الصحيح:<div class='en'>On Mondays, we ___ football!</div>",["play","played","plays","playing"],0,"<span class='en'>On Mondays</span> = كل اثنين ← مضارع."],
+[4,"اختر الصحيح:<div class='en'>Last Tuesday we ___ lots of fun!</div>",["had","have","has","having"],0,"<span class='en'>have → had</span>."],
+[4,"اختر الصحيح:<div class='en'>My sister only ___ three days a week.</div>",["goes","go","went","going"],0,"عادة مع she ← <span class='en'>goes</span>."],
+[4,"الماضي يستخدم للحديث عن:",["لحظات أو أحداث مفردة قبل الآن","الحقائق الدائمة","الروتين","المشاعر الدائمة"],0,"<span class='en'>single moments or events before now</span>."],
+[4,"اختر الصحيح:<div class='en'>I ___ to go to the fair again!</div>",["want","am wanting","wanting","wants"],0,"<span class='en'>want</span> فعل حالة ← بدون ing."],
+[4,"اختر الصحيح:<div class='en'>My cousin ___ there now.</div>",["is playing","plays","play","played"],0,"فعل حركة مع <span class='en'>now</span> ← ing."],
+[4,"أي فعل من أفعال الحالة <span class='en'>state verbs</span>؟",["know","walk","write","buy"],0,"<span class='en'>know</span> فعل حالة (معرفة)."],
+[4,"أي فعل من أفعال الحركة <span class='en'>action verbs</span>؟",["cook","love","need","believe"],0,"<span class='en'>cook</span> فعل حركة."],
+[4,"أي جملة صحيحة؟",["I love fairs.","I am loving fairs.","I loving fairs.","I loves fairs."],0,"<span class='en'>love</span> فعل حالة."],
+// 5 U1 story/reading
+[5,"ما علاقة Chloe و Lia؟",["صداقة مميزة جدًا","أختان","جارتان فقط","لا تعرفان بعضهما"],0,"<span class='en'>They have a very special friendship.</span>"],
+[5,"لماذا انزعجت Lia؟",["لأن Chloe دعت صديقة جديدة لوقتهما الخاص","لأنها خسرت اللعبة","لأن البيت فوضوي","لأنها مريضة"],0,"<span class='en'>But that's our time together!</span>"],
+[5,"كيف كان بيت Chloe مختلفًا؟",["مرتب","فوضوي","مظلم","مزعج"],0,"<span class='en'>Everything is so tidy!</span>"],
+[5,"من الأكثر ثقة في مقابلة الناس الجدد؟",["Ava","Lia","Chloe","Rose"],0,"صافحت ليا مبتسمة."],
+[5,"ما الاهتمام الخاص لـ Rose؟",["origami","yarn bombing","soap carving","video games"],0,"<span class='en'>My special interest is origami.</span>"],
+[5,"كيف بدأ اهتمام Rose بالأوريغامي؟",["وجدت كتابًا على الرصيف بعد يوم فظيع","علّمتها أمها","في المدرسة","من فيلم"],0,"<span class='en'>I found a book about origami on the sidewalk.</span>"],
+[5,"متى تذهب Rose لنادي الأوريغامي؟",["كل خميس","كل اثنين","كل يوم","مرة في الشهر"],0,"<span class='en'>every Thursday</span>"],
+[5,"أين بدأ <span class='en'>yarn bombing</span>؟",["Texas, USA","France","Thailand","Saudi Arabia"],0,"لتجميل الشوارع الفوضوية."],
+[5,"<span class='en'>soap carving</span> هواية مشهورة في:",["Thailand","France","USA","Saudi Arabia"],0,"نحت فن من الصابون."],
+[5,"السدو <span class='en'>Al Sadu</span>:",["من أقدم الفنون في السعودية","هواية تصوير الألعاب","نحت الصابون","لعبة فيديو"],0,"تصنعه البدويات من الصوف."],
+// 6 U2 vocab
+[6,"ما معنى كلمة:<div class='en'>architect</div>",["مهندس معماري","ميكانيكي","سائق","مصور"],0,"<span class='en'>The architect designed the house.</span>"],
+[6,"ما معنى كلمة:<div class='en'>basement</div>",["قبو","سطح","مدخل","بوابة"],0,"<span class='en'>basement</span> = قبو تحت البيت."],
+[6,"ما معنى كلمة:<div class='en'>entrance</div>",["مدخل","مطبخ","رف","زاوية"],0,"<span class='en'>entrance</span> = مدخل."],
+[6,"ما معنى كلمة:<div class='en'>measurements</div>",["مقاسات","مواد","مخطط","تصميم"],0,"<span class='en'>change the measurements of my bedroom</span>"],
+[6,"ما معنى كلمة:<div class='en'>materials</div>",["مواد","مقاسات","مفاتيح","شاشات"],0,"<span class='en'>strong materials</span>"],
+[6,"أين نحفظ الطعام باردًا؟",["fridge","oven","shelf","gate"],0,"<span class='en'>fridge</span> = ثلاجة."],
+[6,"ما معنى كلمة:<div class='en'>cushion</div>",["وسادة","رف","زاوية","ستارة"],0,"<span class='en'>big cushions in the corner</span>"],
+[6,"ما معنى كلمة:<div class='en'>instead</div>",["بدلًا من ذلك","لاحقًا","أيضًا","في الحقيقة"],0,"<span class='en'>Can we have chicken instead?</span>"],
+[6,"ما معنى كلمة:<div class='en'>empty</div>",["فارغ","ممتلئ","ضخم","مرتب"],0,"<span class='en'>We have empty stomachs!</span>"],
+[6,"اختر الصحيح:<div class='en'>The chicken is in the oven. It'll ___ about an hour.</div>",["take","make","have","do"],0,"<span class='en'>take an hour</span> = يستغرق ساعة."],
+[6,"اختر الصحيح:<div class='en'>Is there anything ___ to eat?</div>",["else","later","front","empty"],0,"<span class='en'>else</span> = شيء آخر."],
+[6,"اختر الصحيح:<div class='en'>See you ___!</div>",["later","instead","else","corner"],0,"<span class='en'>later</span> = لاحقًا."],
+// 7 U2 grammar
+[7,"اختر الصحيح:<div class='en'>I forgot to call the owner. I ___ call her now.</div>",["will","won't","am going","was"],0,"قرار الآن ← <span class='en'>will</span>."],
+[7,"اختر الصحيح:<div class='en'>This pizza was awful! I ___ buy it again.</div>",["won't","will","am","did"],0,"قرار بعدم الفعل ← <span class='en'>won't</span>."],
+[7,"اختر الصحيح:<div class='en'>___ you be here tomorrow? — Yes, I think I will.</div>",["Will","Do","Are","Did"],0,"<span class='en'>Will you …?</span>"],
+[7,"نستخدم <span class='en'>will</span> لـ:",["قرار في لحظة الكلام","خطة رتبناها من قبل","حدث في الماضي","عادة يومية"],0,"<span class='en'>a decision made at the moment of speaking</span>."],
+[7,"نستخدم <span class='en'>be going to</span> لـ:",["خطط وترتيبات سابقة","قرار مفاجئ","الماضي","الأوامر"],0,"<span class='en'>plans and arrangements</span>."],
+[7,"اختر الصحيح:<div class='en'>I ___ sleep at Luna's house tonight. (planned)</div>",["am going to","will","am","going"],0,"خطة مسبقة ← <span class='en'>am going to</span>."],
+[7,"اختر الصحيح:<div class='en'>She ___ going to come to my house after school.</div>",["is","are","am","will"],0,"<span class='en'>She is going to</span>."],
+[7,"اختر الصحيح:<div class='en'>It's dark in the basement. I ___ go without a flashlight.</div>",["won't","will","am going","don't"],0,"قرار بعدم الفعل."],
+[7,"أي جملة صحيحة؟",["I will look for the key.","I will to look for the key.","I will looking for the key.","I will looks for the key."],0,"بعد <span class='en'>will</span> فعل مجرد."],
+[7,"اختر الصحيح:<div class='en'>___ we going to watch a movie this evening?</div>",["Are","Will","Do","Is"],0,"<span class='en'>we are going to</span> ← السؤال: <span class='en'>Are we going to</span>."],
+// 8 U2 story/reading
+[8,"بماذا شعرت Sophie في البداية؟",["بالتوتر","بالسعادة","بالغضب","بالملل"],0,"<span class='en'>She was nervous about leaving her friends behind.</span>"],
+[8,"ماذا قالت صديقات Sophie عن البيت؟",["إنه مسكون","إنه صغير","إنه قديم","إنه بعيد"],0,"<span class='en'>the house is haunted!</span>"],
+[8,"ماذا يخرج من نافذة غرفة Sophie؟",["زلّاقة","شجرة","سلّم","حبل"],0,"<span class='en'>a slide</span>"],
+[8,"من أين سمعت Sophie الأصوات؟",["من القبو","من المطبخ","من الحديقة","من السطح"],0,"<span class='en'>coming from the basement</span>"],
+[8,"ماذا كانت الراكونات تفعل؟",["تطلي الجدران","تأكل الطعام","تنام","تلعب الكرة"],0,"<span class='en'>three racoons painting the walls!</span>"],
+[8,"لماذا يعيد Kai تصميم غرفته؟",["لأنه فاز في مسابقة","لأنه انتقل","لأن الغرفة قديمة","لأن أباه مهندس"],0,"<span class='en'>Young Architects competition winner</span>"],
+[8,"ماذا سيضع Kai بدل النافذتين الصغيرتين؟",["نافذة كبيرة واحدة","زلّاقة","شاشة","باب"],0,"<span class='en'>one big window</span>"],
+[8,"ستستضيف السعودية كأس العالم عام:",["2034","2030","2040","2026"],0,"<span class='en'>Saudi Arabia will host the World Cup in 2034.</span>"],
+[8,"كم سيكون طول برج جدة؟",["أكثر من 1,000 متر","500 متر","100 متر","2,000 كم"],0,"<span class='en'>more than 1,000 meters tall</span>"],
+[8,"مواد برج جدة:",["الخرسانة والحديد والزجاج","الخشب","الطين","البلاستيك"],0,"<span class='en'>concrete, steel, and glass</span>"],
+// 9 U3 vocab
+[9,"من يصلح السيارات؟",["mechanic","pilot","waiter","journalist"],0,"<span class='en'>A mechanic fixes cars.</span>"],
+[9,"من يقود الطائرة؟",["pilot","driver","flight attendant","engineer"],0,"<span class='en'>I'm a pilot. I fly airplanes.</span>"],
+[9,"من يتحدث عن الأخبار؟",["journalist","singer","artist","manager"],0,"<span class='en'>I'm a journalist. I talk about the news.</span>"],
+[9,"من يصمم الملابس؟",["fashion designer","photographer","engineer","waiter"],0,"<span class='en'>I design the clothes that you wear.</span>"],
+[9,"من يساعد الركاب في الطائرة؟",["flight attendant","pilot","mechanic","driver"],0,"<span class='en'>I'll help you relax on the plane!</span>"],
+[9,"من يقدم الطعام في المطعم؟",["waiter","manager","artist","singer"],0,"<span class='en'>I'm a waiter and I bring you food.</span>"],
+[9,"من يلتقط صورًا احترافية؟",["photographer","journalist","architect","pilot"],0,"<span class='en'>photographer</span> = مصوّر."],
+[9,"أين يعمل الممثلون؟",["on a stage","in a factory","at an airport","in a kitchen"],0,"<span class='en'>Actors act on a stage.</span>"],
+[9,"ما معنى كلمة:<div class='en'>gallery</div>",["معرض فني","مصنع","مكتب","مطار"],0,"<span class='en'>art gallery</span>"],
+[9,"ما معنى كلمة:<div class='en'>factory</div>",["مصنع","مكتب","مسرح","مطار"],0,"<span class='en'>factory</span> = مصنع."],
+[9,"ما معنى كلمة:<div class='en'>meeting</div>",["اجتماع","وظيفة","أخبار","مكتب"],0,"<span class='en'>I often have meetings.</span>"],
+// 10 U3 grammar
+[10,"متأكد 100%:<div class='en'>I ___ be an artist.</div>",["am going to","might","may","might not"],0,"<span class='en'>going to</span> = متأكد تمامًا."],
+[10,"احتمال 50%:<div class='en'>You ___ fly all over the world.</div>",["may","are going to","isn't going to","will not"],0,"<span class='en'>may</span> = محتمل."],
+[10,"غير محتمل:<div class='en'>She ___ become an engineer.</div>",["might","is going to","will","is"],0,"<span class='en'>might</span> = احتمال ضعيف."],
+[10,"مستحيل 0%:<div class='en'>He ___ act on TV.</div>",["isn't going to","may","might","is going to"],0,"<span class='en'>isn't going to</span>."],
+[10,"اختر الصحيح:<div class='en'>This is the theater, ___?</div>",["isn't it","is it","doesn't it","isn't this"],0,"مثبتة ← tag منفي، و<span class='en'>this → it</span>."],
+[10,"اختر الصحيح:<div class='en'>You aren't a pilot, ___?</div>",["are you","aren't you","do you","don't you"],0,"منفية ← tag مثبت."],
+[10,"اختر الصحيح:<div class='en'>She enjoys taking photos, ___?</div>",["doesn't she","isn't she","don't she","does she"],0,"فعل عادي مضارع مع she ← <span class='en'>doesn't she</span>."],
+[10,"اختر الصحيح:<div class='en'>You saw a famous actor, ___?</div>",["didn't you","don't you","weren't you","did you"],0,"<span class='en'>saw</span> ماضٍ ← <span class='en'>didn't</span>."],
+[10,"اختر الصحيح:<div class='en'>We can hope, ___?</div>",["can't we","can we","don't we","won't we"],0,"<span class='en'>can ← can't</span>."],
+[10,"اختر الصحيح:<div class='en'>You haven't managed a team before, ___?</div>",["have you","haven't you","did you","do you"],0,"منفية ← مثبت."],
+[10,"اختر الصحيح:<div class='en'>He is going to work here, ___?</div>",["isn't he","is he","doesn't he","won't he"],0,"<span class='en'>is ← isn't</span>."],
+// 11 U3 story/reading
+[11,"لماذا كانت Emilia حزينة؟",["لا تعرف ماذا ستدرس في الجامعة","رسبت في الاختبار","فقدت رسوماتها","تشاجرت مع أختها"],0,"<span class='en'>I don't know what I'm going to study in college.</span>"],
+[11,"ما موهبة Emilia؟",["الرسم","الغناء","الطبخ","الرياضة"],0,"<span class='en'>You are very good at drawing!</span>"],
+[11,"ماذا تعتقد Harper أنه الأهم؟",["السعادة بما تحب","المال","الشهرة","السفر"],0,"<span class='en'>What matters is that you're going to be happy.</span>"],
+[11,"<span class='en'>robot therapist</span> هو:",["معالج للروبوتات","روبوت يعالج الناس","مصمم طعام","مبرمج"],0,"<span class='en'>therapists for robots</span>"],
+[11,"<span class='en'>food engineers</span> في 2040:",["يبتكرون ويصممون الطعام","يطبخون في المطاعم","يزرعون الطعام","يبيعون الطعام"],0,"<span class='en'>They are going to create and design the food.</span>"],
+[11,"الاسم من <span class='en'>art</span> بـ -ist:",["artist","artest","artian","arter"],0,"<span class='en'>art → artist</span>."],
+[11,"الاسم من <span class='en'>cycle</span> بـ -ist:",["cyclist","cycleist","cyclest","cyclar"],0,"نحذف e: <span class='en'>cyclist</span>."],
+[11,"<span class='en'>Someone who reports the news</span>:",["journalist","scientist","therapist","archeologist"],0,"<span class='en'>journalist</span>."],
+[11,"كم وظيفة جديدة في الذكاء الاصطناعي بحلول 2030؟",["15,000","11 مليون","47","6"],0,"<span class='en'>15,000 new jobs in artificial intelligence</span>"],
+[11,"كم شخصًا يعمل في الشركات الخاصة في السعودية؟",["أكثر من 11 مليون","15,000","47%","6 ملايين"],0,"<span class='en'>More than 11 million people</span>"],
+// 12 U4 vocab
+[12,"ما معنى كلمة:<div class='en'>flour</div>",["طحين","زهرة","سكر","زبدة"],0,"<span class='en'>flour</span> = طحين (وflower = زهرة)."],
+[12,"ما معنى كلمة:<div class='en'>ingredients</div>",["مكوّنات","وصفة","وجبة خفيفة","رائحة"],0,"<span class='en'>Get your ingredients ready first.</span>"],
+[12,"ما معنى كلمة:<div class='en'>recipe</div>",["وصفة","مكونات","فرن","طبق"],0,"<span class='en'>recipe</span> = وصفة."],
+[12,"ما معنى كلمة:<div class='en'>fetch</div>",["يُحضِر / يجلب","يخبز","يقيس","يسكب"],0,"<span class='en'>Fetch your ingredients now!</span>"],
+[12,"ما معنى كلمة:<div class='en'>countertop</div>",["سطح المطبخ","الفرن","الثلاجة","الرف"],0,"<span class='en'>She puts her ingredients on the countertop.</span>"],
+[12,"ما معنى كلمة:<div class='en'>stir</div>",["يقلّب","يسكب","يقطّع","يفرد"],0,"<span class='en'>Keep stirring while I pour the sauce.</span>"],
+[12,"ما معنى كلمة:<div class='en'>pour</div>",["يسكب","يقيس","يخلط","يشم"],0,"<span class='en'>pour the sauce</span>"],
+[12,"ما معنى كلمة:<div class='en'>dough</div>",["عجين","زبدة","عسل","زبادي"],0,"<span class='en'>If the dough is wet, add more flour.</span>"],
+[12,"اختر الصحيح:<div class='en'>There is not ___ food!</div>",["enough","many","topping","measure"],0,"<span class='en'>enough</span> = كافٍ."],
+[12,"إضافة توضع على وجه الطعام:",["topping","dough","flour","recipe"],0,"<span class='en'>banana and yogurt topping</span>"],
+[12,"ما معنى <span class='en'>measure</span>؟",["يقيس","يخلط","يسكب","يتذوق"],0,"<span class='en'>measure</span> = يقيس."],
+// 13 U4 grammar
+[13,"نصيحة:<div class='en'>You ___ get your ingredients ready first.</div>",["should","had better not","shouldn't","better"],0,"<span class='en'>should</span> = نصيحة."],
+[13,"تحذير:<div class='en'>You ___ leave the cookies in the oven too long!</div>",["had better not","should","had not better","better not had"],0,"<span class='en'>had better not</span> = تحذير."],
+[13,"اختر الصحيح:<div class='en'>You shouldn't ___ too much sugar.</div>",["use","to use","using","uses"],0,"بعد <span class='en'>should</span> فعل مجرد."],
+[13,"اختر الصحيح:<div class='en'>___ I use eggs in the mixture?</div>",["Should","Had","Better","Do should"],0,"<span class='en'>Should + subject + verb?</span>"],
+[13,"<span class='en'>You'd better</span> تعني:",["You had better","You would better","You did better","You should not"],0,"<span class='en'>'d = had</span>."],
+[13,"جمل <span class='en'>should</span> تشبه:",["It's a good idea to …","Don't worry about …","It's a bad idea …","I don't know …"],0,"<span class='en'>should</span> = فكرة جيدة."],
+[13,"اختر الصحيح:<div class='en'>If you want a sweet snack, you ___ sugar.</div>",["add","will added","added","adding"],0,"الشرطية الصفرية: مضارع."],
+[13,"اختر الصحيح:<div class='en'>If we don't have sugar, we ___ honey.</div>",["use","used","will used","using"],0,"حقيقة دائمة ← مضارع."],
+[13,"اختر الصحيح:<div class='en'>We add more water if the sauce ___ too thick.</div>",["is","was","will be","be"],0,"بعد if مضارع."],
+[13,"الشرطية الصفرية نستخدمها لـ:",["حقائق صحيحة دائمًا","خطط مستقبلية","الماضي","الأوامر فقط"],0,"<span class='en'>facts that are always true</span>."],
+// 14 U4 story/reading
+[14,"أين كانت Layla؟",["في حصة الطبخ بالمدرسة","في بيتها","في مطعم","في السوق"],0,"<span class='en'>Layla is at school, in her cooking class.</span>"],
+[14,"أول مكوّن جرّبته Layla:",["الثوم","الجزر","البصل","البروكلي"],0,"<span class='en'>First, she puts in garlic.</span>"],
+[14,"ما نصيحة المعلمة؟",["جرّبي الجزر","جرّبي البصل","توقفي","استخدمي سكرًا أكثر"],0,"<span class='en'>You should try carrots.</span>"],
+[14,"كم بقي من الوقت؟",["15 دقيقة","5 دقائق","ساعة","30 دقيقة"],0,"<span class='en'>Only 15 minutes left!</span>"],
+[14,"ماذا قالت Thelma عن الكوكيز؟",["يجب أن تبيعيها!","رائحتها سيئة","لا تعجبني","أضيفي ثومًا"],0,"<span class='en'>You should sell these!</span>"],
+[14,"ما الذي يساعد عندما يؤلمك رأسك؟",["شرب الماء","أكل السكر","تفويت الوجبات","الأكل بعد 7 مساءً"],0,"<span class='en'>Water … helps when your head hurts!</span>"],
+[14,"لماذا لا يُفضَّل الأكل بعد 7 مساءً؟",["لن تنام جيدًا","ستشعر بالجوع","الطعام بارد","المطاعم مغلقة"],0,"<span class='en'>because you won't sleep well</span>"],
+[14,"الغذاء المتوازن يعني:",["أكل الكمية الصحيحة من كل شيء","أكل السلطة فقط","أكل الحلويات","عدم أكل اللحم"],0,"<span class='en'>a balanced diet</span>"],
+[14,"المعكرونة <span class='en'>pasta</span> من:",["النشويات starches","البروتينات","الألبان","الدهنيات"],0,"<span class='en'>potatoes, pasta, and rice</span>"],
+[14,"إذا لم تأكل اللحم، ماذا تأكل من البروتين؟",["الفول أو البيض","الخبز","الزبدة","السكر"],0,"<span class='en'>eat beans or eggs instead!</span>"],
+];
+const NAMES={0:"كل الأسئلة",1:"Welcome: المفردات والتعابير",2:"Welcome: مراجعة القواعد",3:"الوحدة ١: المفردات",4:"الوحدة ١: القواعد",5:"الوحدة ١: القصة والقراءة",6:"الوحدة ٢: المفردات",7:"الوحدة ٢: القواعد",8:"الوحدة ٢: القصة والقراءة",9:"الوحدة ٣: المفردات",10:"الوحدة ٣: القواعد",11:"الوحدة ٣: القصة والقراءة",12:"الوحدة ٤: المفردات",13:"الوحدة ٤: القواعد",14:"الوحدة ٤: القصة والقراءة"};const UNITS={0:[1,2,3,4,5,6,7,8,9,10,11,12,13,14],"w":[1,2],"u1":[3,4,5],"u2":[6,7,8],"u3":[9,10,11],"u4":[12,13,14]};const LN=k=>NAMES[k];
+const L="أبجد";
+let sel=0,order=[],i=0,score=0,answered=false,wrong=[],picks=[];
+const app=document.getElementById('app'),chips=document.getElementById('chips');
+function shuffle(a){a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]];}return a;}
+const OPTS=[[0,'كل الأسئلة'],['w','Welcome'],['u1','Unit 1 Personal Interests'],['u2','Unit 2 House Designs'],['u3','Unit 3 Job Paths'],['u4','Unit 4 Glorious Food'],1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+function lessonsOf(k){return typeof k==='number'&&k>0?[k]:UNITS[k];}
+function drawChips(){chips.innerHTML='';OPTS.forEach(o=>{const k=Array.isArray(o)?o[0]:o;const lab=Array.isArray(o)?o[1]:NAMES[k];const ls=lessonsOf(k);const n=QS.filter(q=>ls.includes(q[0])).length;const b=document.createElement('button');b.className='chip';b.type='button';b.setAttribute('aria-pressed',k===sel);b.textContent=lab+' ('+n.toLocaleString('ar-SA')+')';b.onclick=()=>{sel=k;start();};chips.appendChild(b);});}
+function start(){drawChips();order=shuffle(QS.filter(q=>lessonsOf(sel).includes(q[0]))).map(q=>{const ix=shuffle(q[2].map((_,j)=>j));return [q[0],q[1],ix.map(j=>q[2][j]),ix.indexOf(q[3]),q[4]];});i=0;score=0;wrong=[];show();}
+function show(){answered=false;const q=order[i];const pct=Math.round(i/order.length*100);
+app.innerHTML=`<div style="display:grid;gap:10px"><div class="meta"><span>السؤال ${(i+1).toLocaleString('ar-SA')} من ${order.length.toLocaleString('ar-SA')}</span><span>الصحيحة: ${score.toLocaleString('ar-SA')}</span></div><div class="bar"><i style="width:${pct}%"></i></div></div>
+<section class="card"><span class="tag">${NAMES[q[0]]}</span><div class="q">${q[1]}</div><div class="opts">${q[2].map((o,k)=>`<button class="opt" type="button" data-k="${k}"><b>${L[k]}.</b><span dir="auto">${o}</span></button>`).join('')}</div><div id="fb"></div></section>`;
+app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));}
+function pick(k){if(answered)return;answered=true;const q=order[i];const ok=k===q[3];if(ok)score++;else wrong.push([q,k]);
+app.querySelectorAll('.opt').forEach(b=>{const n=+b.dataset.k;b.disabled=true;if(n===q[3])b.classList.add('right');else if(n===k)b.classList.add('wrong');});
+const last=i===order.length-1;
+document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'no'}"><strong>${ok?'أحسنت! إجابة صحيحة':'إجابة خاطئة · الصحيحة: '+q[2][q[3]]}</strong><p>${q[4]}</p></div><div class="row" style="margin-top:12px"><button class="btn" type="button" id="nx">${last?'شوف النتيجة':'السؤال التالي ←'}</button></div>`;
+const nx=document.getElementById('nx');nx.focus();nx.onclick=()=>{if(last)result();else{i++;show();}};}
+function result(){const t=order.length,p=Math.round(score/t*100);
+const msg=p>=90?'ممتاز! أنت جاهز للاختبار 🌟':p>=75?'جيد جدًا، راجع الأسئلة الخاطئة فقط':p>=50?'جيد، تحتاج مراجعة بعض الأجزاء':'راجع الملخص مرة ثانية ثم أعد الاختبار';
+const per=lessonsOf(sel).filter(k=>order.some(q=>q[0]===k)).map(k=>{const all=order.filter(q=>q[0]===k).length;const w=wrong.filter(x=>x[0][0]===k).length;return `<div><span>${NAMES[k]}</span><span>${(all-w).toLocaleString('ar-SA')} / ${all.toLocaleString('ar-SA')}</span></div>`}).join('');
+app.innerHTML=`<section class="card" style="text-align:center;justify-items:center"><span class="tag">النتيجة</span><div class="score">${score.toLocaleString('ar-SA')} / ${t.toLocaleString('ar-SA')}</div><div style="font-family:var(--display);font-size:1.15rem">${p.toLocaleString('ar-SA')}٪ · ${msg}</div><div class="per" style="width:100%;text-align:start">${per}</div><div class="row" style="justify-content:center"><button class="btn" type="button" id="again">أعد الاختبار</button>${wrong.length?'<button class="btn ghost" type="button" id="redo">أعد الأسئلة الخاطئة فقط</button>':''}</div></section>
+${wrong.length?`<section style="display:grid;gap:10px"><h2 style="font-size:1.2rem">راجع هذه الأسئلة</h2><div class="review">${wrong.map(([q,k])=>`<div class="rv"><div>${q[1]}</div><small>إجابتك: ${q[2][k]}</small><div style="color:var(--good);font-weight:500">الصحيحة: ${q[2][q[3]]}</div><small>${q[4]}</small></div>`).join('')}</div></section>`:''}`;
+document.getElementById('again').onclick=start;const r=document.getElementById('redo');if(r)r.onclick=()=>{order=shuffle(wrong.map(x=>x[0]));i=0;score=0;wrong=[];show();};window.scrollTo({top:0});}
+start();
+</script>

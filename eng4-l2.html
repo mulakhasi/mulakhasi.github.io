@@ -46,7 +46,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:10px 16px 24px}
 <body>
 <header><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="16" width="32" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/><polygon points="14,27 53,27 50,38 11,38" fill="#D7F25C"/><rect x="28" y="44" width="22" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/></svg>ملخصي</div><div class="sub">اللغة الإنجليزية · الصف الرابع الابتدائي · الفصل الأول</div></header>
 <main><div class="card" id="app"></div></main>
-<footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
+<footer>إعداد ملخّصي · تدريب مساعد بأسئلة اختيار من متعدد؛ لا يغني عن الكتاب ولا عن التدريب الكتابي في الملخص، ولا يقيس الجاهزية للاختبار.</footer>
 <script>
 const Q=[
 {q:"Which phrase means “يُخرج القمامة”?",o:["take out the trash", "make the bed", "cut the grass", "clear the table"],e:"take out the trash = يخرج القمامة."},
@@ -59,7 +59,7 @@ const Q=[
 {q:"Choose the correct word: ___ you help your grandparents on weekends?",o:["Do", "Are", "Does", "Is"],e:"سؤال عن عادة بالمضارع البسيط: Do you help…؟"},
 {q:"Choose the correct word: What are you ___ now?",o:["doing", "do", "does", "did"],e:"are + doing (مستمر)."},
 {q:"Which words usually go with the present progressive?",o:["now, right now, today", "every day, always", "yesterday, last week", "never, often"],e:"now / today تدل على الحدث الآن."},
-{q:"We use “Can I …?” to express…",o:["an offer", "a request", "the past", "a fact"],e:"Can I = عرض."},
+{q:"Choose the best reply: “Can I help you?”",o:["Yes, please.", "Yes, I can.", "I help you.", "Yes, you help."],e:"Can I help you? عرض مساعدة ← Yes, please. أو No, thank you."},
 {q:"We use “Can you …?” to express…",o:["a request", "an offer", "the past", "a habit"],e:"Can you = طلب."},
 {q:"Choose the correct sentence.",o:["Can you help me wash my car?", "Can help you me wash car?", "You can help me wash my car?", "Can you helping me?"],e:"Can + فاعل + فعل أساسي."},
 {q:"What did Alba feed in the story?",o:["The chickens", "The cats", "The parrot", "The fish"],e:"أطعمت Alba الدجاج (chickens)."},
@@ -75,8 +75,8 @@ const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 let order,i,score,wrong;
 function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
 function start(){
-  app.innerHTML=`<h1>اختبار «Chores»</h1>
-  <p style="margin-top:8px">Part 1 · الوحدة الثانية: المهام المنزلية (ص ٢٢–٣٣)</p>
+  app.innerHTML=`<h1>تدريب «Chores»</h1>
+  <p style="margin-top:8px">Part 1 · الوحدة الثانية: الأعمال المنزلية (ص ٢٢–٣٣)</p>
   <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تظهر واحدًا تلو الآخر. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح قصير، وفي النهاية تظهر نتيجتك.</p>
   <button class="btn" id="go">ابدأ الاختبار</button>`;
   document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};
@@ -103,7 +103,7 @@ function answer(btn,q){
 }
 function result(){
   const pct=Math.round(score/Q.length*100);
-  const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+  const msg=pct>=90?'أجبت جيدًا عن هذا التدريب. أكمل التدريب التحريري والكتابة في الملخص 👍':pct>=70?'جيد، راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة':'راجع الدرس في الملخص ثم أعد المحاولة 💪';
   app.innerHTML=`<h1>نتيجتك</h1>
   <div class="score">${ar(score)} / ${ar(Q.length)}</div>
   <p class="msg">${msg}</p>

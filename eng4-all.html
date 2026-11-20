@@ -46,77 +46,67 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:10px 16px 24px}
 <body>
 <header><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="16" width="32" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/><polygon points="14,27 53,27 50,38 11,38" fill="#D7F25C"/><rect x="28" y="44" width="22" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/></svg>ملخصي</div><div class="sub">اللغة الإنجليزية · الصف الرابع الابتدائي · الفصل الأول</div></header>
 <main><div class="card" id="app"></div></main>
-<footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
+<footer>إعداد ملخّصي · تدريب مساعد بأسئلة اختيار من متعدد؛ لا يغني عن الكتاب ولا عن التدريب الكتابي في الملخص، ولا يقيس الجاهزية للاختبار.</footer>
 <script>
 const Q=[
 {q:"Which word means “خائف”?",o:["afraid", "brilliant", "naughty", "surprised"],e:"afraid = خائف."},
 {q:"Which word means “شقي / مشاغب”?",o:["naughty", "terrible", "different", "exciting"],e:"naughty = شقي."},
-{q:"Which word means “خطير”?",o:["dangerous", "brilliant", "exciting", "different"],e:"dangerous = خطير."},
+{q:"What is the ordinal number for 2?",o:["second", "two", "twice", "twelfth"],e:"2nd = second."},
 {q:"What is the ordinal number for 20?",o:["twentieth", "twenty", "twelfth", "twentyth"],e:"20th = twentieth."},
-{q:"Complete: She has ___ hair than me.",o:["longer", "longest", "more long", "the longer"],e:"مقارنة بين اثنين: longer than."},
 {q:"Complete: She is the ___ girl in our class.",o:["nicest", "nicer", "more nice", "niceest"],e:"Superlative: the nicest."},
 {q:"Complete: I am the ___ student in class! (bad)",o:["worst", "worse", "baddest", "most bad"],e:"bad → worse → the worst."},
 {q:"What is the superlative of “good”?",o:["the best", "the goodest", "better", "the most good"],e:"good → better → the best."},
-{q:"Which adverb means 100%?",o:["always", "usually", "sometimes", "never"],e:"always = دائمًا (100%)."},
+{q:"Which adverb means 0%?",o:["never", "rarely", "sometimes", "often"],e:"never = أبدًا (0%)."},
 {q:"Choose the correct word order.",o:["My dad often makes dinner.", "My dad makes often dinner.", "Often my dad dinner makes.", "My dad makes dinner often the."],e:"ظرف التكرار قبل الفعل الأساسي."},
-{q:"Complete: We ___ happy at the celebration.",o:["were", "was", "are was", "be"],e:"we + were."},
 {q:"Complete: The celebration ___ in the classroom. (negative)",o:["wasn’t", "weren’t", "didn’t", "isn’t was"],e:"celebration مفرد: wasn’t."},
 {q:"Who is your father’s brother?",o:["Your uncle", "Your cousin", "Your grandson", "Your son"],e:"uncle = عم / خال."},
-{q:"Your uncle’s children are your…",o:["cousins", "parents", "grandparents", "daughters"],e:"cousin = ابن / ابنة العم أو الخال."},
-{q:"Which word means “كثير الكلام”?",o:["chatty", "shy", "lazy", "weak"],e:"chatty = كثير الكلام."},
-{q:"Which word is the opposite of “strong”?",o:["weak", "helpful", "kind", "tired"],e:"weak = ضعيف."},
-{q:"Choose the correct question: ___ do you walk in the park?",o:["How often", "How long", "How old", "How many"],e:"نسأل عن التكرار بـ How often."},
+{q:"Your son’s son is your…",o:["grandson", "cousin", "uncle", "husband"],e:"grandson = حفيد."},
+{q:"Which word means “خجول”?",o:["shy", "chatty", "strong", "kind"],e:"shy = خجول."},
+{q:"Choose the correct question: ___ do you walk in the park? — Twice a week.",o:["How often", "How long", "How old", "How many"],e:"الجواب «Twice a week» عدد مرات ← How often."},
 {q:"Which adverb means “75%”?",o:["usually", "sometimes", "rarely", "never"],e:"usually = 75%."},
 {q:"Where does the adverb of frequency go?",o:["Before the main verb", "At the end only", "After the question mark", "Before the name"],e:"ظرف التكرار قبل الفعل الأساسي."},
-{q:"“How often do you take family pictures?” Uncle Tom says:",o:["We always take family pictures for vacations.", "We never take pictures.", "We rarely meet.", "We take pictures yesterday."],e:"في القصة: We always take family pictures for vacations and celebrations."},
-{q:"Complete: Is this your bag? No, it isn’t ___.",o:["mine", "my", "me", "I"],e:"ضمير الملكية بدون اسم: mine."},
-{q:"Complete: Can I borrow that pen? Ask Saeed. It’s ___.",o:["his", "hers", "mine", "ours"],e:"Saeed ولد، فنقول his."},
+{q:"Which question starts with “Whose”?",o:["Whose bag was it?", "Who bag is it?", "Whose is it bag?", "Whom was bag?"],e:"Whose = لمن؟"},
+{q:"Complete: It was ___ house. (they)",o:["their", "theirs", "there", "they"],e:"بعد الفراغ يأتي اسم (house) ← their. وtheirs تُستعمل بلا اسم: It was theirs."},
 {q:"Which word is informal for “mother”?",o:["mom", "grandmother", "aunt", "wife"],e:"mom غير رسمي، وmother رسمي."},
 {q:"How many museums will Diriyah have?",o:["Nine", "Four", "Eight", "Sixteen"],e:"تسعة متاحف."},
 {q:"Which phrase means “يُخرج القمامة”?",o:["take out the trash", "make the bed", "cut the grass", "clear the table"],e:"take out the trash = يخرج القمامة."},
-{q:"Which phrase means “يكنس الأرض”?",o:["sweep the floor", "wash the dishes", "feed the animals", "set the table"],e:"sweep the floor = يكنس الأرض."},
-{q:"Which phrase means “يلحق بالحافلة”?",o:["catch the bus", "get dressed", "get up", "wake up"],e:"catch the bus = يلحق بالحافلة."},
-{q:"Complete: She ___ a comic book now.",o:["is reading", "reads", "read", "reading"],e:"now = حدث الآن فنستخدم المضارع المستمر."},
+{q:"Which chore do you do with a bucket?",o:["wash the floor", "cut the grass", "make the bed", "set the table"],e:"bucket = دلو يُستخدم لغسل الأرض."},
+{q:"Complete: She ___ comic books every day.",o:["reads", "is reading", "read", "reading"],e:"every day = عادة فنستخدم المضارع البسيط."},
 {q:"Choose the correct present progressive: Omar ___ his comic book now.",o:["is reading", "reads", "does read", "are reading"],e:"Omar فرد: is + reading."},
 {q:"Choose the correct word: What are you ___ now?",o:["doing", "do", "does", "did"],e:"are + doing (مستمر)."},
-{q:"We use “Can I …?” to express…",o:["an offer", "a request", "the past", "a fact"],e:"Can I = عرض."},
-{q:"We use “Can you …?” to express…",o:["a request", "an offer", "the past", "a habit"],e:"Can you = طلب."},
-{q:"What did Alba feed in the story?",o:["The chickens", "The cats", "The parrot", "The fish"],e:"أطعمت Alba الدجاج (chickens)."},
-{q:"Who is cleaning the kitchen windows?",o:["Grandma", "Grandpa", "Alba", "Layla"],e:"Grandma: I’m cleaning the kitchen windows."},
+{q:"Choose the best reply: “Can I help you?”",o:["Yes, please.", "Yes, I can.", "I help you.", "Yes, you help."],e:"Can I help you? عرض مساعدة ← Yes, please. أو No, thank you."},
+{q:"Choose the correct sentence.",o:["Can you help me wash my car?", "Can help you me wash car?", "You can help me wash my car?", "Can you helping me?"],e:"Can + فاعل + فعل أساسي."},
+{q:"Who is Layla to Alba?",o:["Her cousin", "Her sister", "Her friend from school", "Her aunt"],e:"Layla ابنة عمها (cousin)."},
 {q:"In “ride my bike”, the word “ride” is a…",o:["verb (action)", "noun (thing)", "adjective", "adverb"],e:"ride my bike = فعل."},
 {q:"Why is washing hands with soap and warm water important?",o:["It removes germs and bacteria", "It makes the air dirty", "It stops homework", "It makes you sleepy"],e:"يزيل الجراثيم والبكتيريا ويمنع العدوى."},
 {q:"Which word means “يتسلق”?",o:["climb", "carry", "drop", "shout"],e:"climb = يتسلق."},
-{q:"Which word means “يُسقط”?",o:["drop", "wait", "laugh", "plant"],e:"drop = يُسقط."},
-{q:"Which word means “يسقي”?",o:["water", "fix", "plant", "rob"],e:"water = يسقي."},
-{q:"What is the past of “dance”?",o:["danced", "danceed", "dancied", "dancd"],e:"dance → danced (نضيف d فقط)."},
+{q:"Which word means “يصرخ”?",o:["shout", "cry", "clap", "jump"],e:"shout = يصرخ."},
+{q:"What is the past of “play”?",o:["played", "plaied", "play", "playing"],e:"play → played."},
 {q:"What is the past of “carry”?",o:["carried", "carryed", "carrid", "carryd"],e:"carry → carried (y → ied)."},
 {q:"What is the past of “drop”?",o:["dropped", "droped", "dropt", "dropping"],e:"drop → dropped."},
 {q:"Which sentence is negative in the simple past?",o:["I didn’t play football last Thursday.", "I don’t play football.", "I played football.", "I am not playing football."],e:"didn’t + الفعل الأساسي."},
-{q:"Complete: He ___ laugh at my joke last night.",o:["didn’t", "don’t", "doesn’t", "isn’t"],e:"last night = ماضٍ، لذلك didn’t."},
-{q:"Choose the correct short answer: Did he score many goals? (yes)",o:["Yes, he did.", "Yes, he does.", "Yes, he scored.", "Yes, he is."],e:"الجواب القصير: Yes, he did."},
-{q:"What did Samantha think was a monster?",o:["A worm", "A tree", "A leaf", "A bird"],e:"كانت دودة (worm)."},
+{q:"Choose the correct question.",o:["Did you win?", "Do you won?", "Did you won?", "Are you win?"],e:"Did + فاعل + الفعل الأساسي."},
+{q:"Why was Samantha sad?",o:["She was alone and knew no one", "She lost her book", "She was sick", "She failed an exam"],e:"كانت وحدها ولا تعرف أحدًا."},
 {q:"In the play, what did the foreign students give?",o:["Gifts", "Books", "Food", "Flowers"],e:"قدموا هداياهم للطلاب السعوديين."},
 {q:"Mark Twain’s stories were very…",o:["funny", "sad", "scary", "short"],e:"اشتهر بقصصه وشخصياته المضحكة."},
 {q:"Which phrase means “يصنع نموذجًا”?",o:["make a model", "dress up", "hide", "go shopping"],e:"make a model = يصنع نموذجًا."},
-{q:"Which word means “يختبئ”?",o:["hide", "catch", "text", "dress"],e:"hide = يختبئ."},
-{q:"What is the past of “go”?",o:["went", "goed", "gone", "going"],e:"go → went."},
-{q:"What is the past of “sleep”?",o:["slept", "sleeped", "slep", "sleepd"],e:"sleep → slept."},
-{q:"Choose the correct negative: I ___ go shopping on Saturday.",o:["didn’t", "don’t", "wasn’t", "not"],e:"didn’t + الفعل الأساسي."},
+{q:"What is “vlogging”?",o:["Recording and sharing videos online", "Playing board games", "Making a model", "Going shopping"],e:"vlogging = تدوين بالفيديو."},
+{q:"What is the past of “see”?",o:["saw", "seed", "seen", "sees"],e:"see → saw."},
+{q:"What is the past of “take”?",o:["took", "taked", "taken", "takes"],e:"take → took."},
 {q:"Choose the correct sentence.",o:["He saw a movie on Saturday night.", "He seed a movie.", "He sees a movie yesterday.", "He did saw a movie."],e:"saw هو ماضي see."},
 {q:"Which linking word gives a REASON?",o:["because", "but", "and", "when"],e:"because = لأن (سبب)."},
 {q:"Complete: She can run, ___ she can’t swim.",o:["but", "because", "when", "so"],e:"فكرتان متعارضتان: but."},
 {q:"Complete: He got off the bus ___ it stopped.",o:["when", "so", "but", "and"],e:"when للوقت."},
-{q:"What did Peter and Colin buy for Charlie?",o:["A video game", "A cat", "A book", "A bike"],e:"اشتريا لعبة فيديو بـ 20 دولارًا."},
-{q:"What is the adverb of “quiet”?",o:["quietly", "quietily", "quieter", "quietest"],e:"quiet + ly = quietly."},
-{q:"What is the adverb of “lucky”?",o:["luckily", "luckyly", "lucker", "luckiness"],e:"lucky → luckily."}
+{q:"What followed Peter and Colin home?",o:["A little cat", "A dog", "A bird", "A rabbit"],e:"تبعتهما القطة الصغيرة."},
+{q:"What is the adverb of “happy”?",o:["happily", "happyly", "happiness", "happier"],e:"y → i ثم ly: happily."}
 ];
 const app=document.getElementById('app');
 const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 let order,i,score,wrong;
 function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
 function start(){
-  app.innerHTML=`<h1>الاختبار الشامل — إنجليزي رابع</h1>
-  <p style="margin-top:8px">Part 1 · وحدة الترحيب + الوحدات ١–٤ (ص ٤–٥٧)</p>
+  app.innerHTML=`<h1>تدريب شامل — إنجليزي رابع</h1>
+  <p style="margin-top:8px">Part 1 · الترحيب والوحدات ١–٤</p>
   <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تظهر واحدًا تلو الآخر. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح قصير، وفي النهاية تظهر نتيجتك.</p>
   <button class="btn" id="go">ابدأ الاختبار</button>`;
   document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};
@@ -143,7 +133,7 @@ function answer(btn,q){
 }
 function result(){
   const pct=Math.round(score/Q.length*100);
-  const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+  const msg=pct>=90?'أجبت جيدًا عن هذا التدريب. أكمل التدريب التحريري والكتابة في الملخص 👍':pct>=70?'جيد، راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة':'راجع الدرس في الملخص ثم أعد المحاولة 💪';
   app.innerHTML=`<h1>نتيجتك</h1>
   <div class="score">${ar(score)} / ${ar(Q.length)}</div>
   <p class="msg">${msg}</p>

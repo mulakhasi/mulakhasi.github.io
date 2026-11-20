@@ -46,67 +46,57 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:10px 16px 24px}
 <body>
 <header><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="16" width="32" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/><polygon points="14,27 53,27 50,38 11,38" fill="#D7F25C"/><rect x="28" y="44" width="22" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/></svg>ملخصي</div><div class="sub">اللغة الإنجليزية · الصف السادس الابتدائي · الفصل الأول</div></header>
 <main><div class="card" id="app"></div></main>
-<footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
+<footer>إعداد ملخّصي · تدريب مساعد بأسئلة اختيار من متعدد؛ لا يغني عن الكتاب ولا عن التدريب الكتابي في الملخص، ولا يقيس الجاهزية للاختبار.</footer>
 <script>
 const Q=[
-{q:"«I agree!» means:",o:["I have the same opinion.","I don’t want you here.","Right now.","Very soon."],e:"agree = يوافق.",b:1},
-{q:"«at the moment» means:",o:["right now","very soon","yesterday","never"],e:"at the moment = الآن.",b:1},
-{q:"A friendlier way to say «Go away!» is:",o:["In a minute.","Go away now!","No!","Leave!"],e:"فكرة القصّة: قل In a minute.",b:1},
-{q:"An object you keep a drink in:",o:["glass","gate","tie","helmet"],e:"glass = كأس."},
-{q:"This week she …… the bus because of the weather.",o:["is taking","takes","take","took"],e:"this week ← Present Progressive.",b:1},
-{q:"We usually …… together in math class.",o:["don’t sit","aren’t sitting","doesn’t sit","not sit"],e:"usually + نفي ← don’t.",b:1},
-{q:"What time …… today?",o:["did you wake up","were you waking up","do you woke up","you woke up"],e:"حدث قصير منتهٍ ← Simple Past.",b:1},
-{q:"Nova has …… hair. (of the three)",o:["the longest","longer","longest than","more long"],e:"مجموعة ← the -est.",b:1},
-{q:"I …… go to football practice on Tuesday. (plan)",o:["am going to","might","will maybe","may not"],e:"خطّة ← going to.",b:1},
-{q:"Piano lesson is crossed out on Thursday: I …… have my piano lesson on Thursday.",o:["am not going to","am going to","will","might"],e:"خطّة ملغاة ← am not going to."},
-{q:"Dinosaurs are now ……",o:["extinct","furry","quiet","wild"],e:"extinct = منقرض.",b:1},
-{q:"A colorful insect with beautiful wings:",o:["butterfly","tortoise","swan","beetle"],e:"butterfly = فراشة.",b:1},
-{q:"Insects …… by other animals.",o:["are eaten","eat","is eaten","are eat"],e:"Passive: are + past participle.",b:1},
-{q:"Dinosaur bones …… by scientists.",o:["are studied","study","studies","is studied"],e:"bones جمع ← are studied.",b:1},
-{q:"The Passive form of «Sharks eat fish» is:",o:["Fish are eaten by sharks.","Fish eat sharks.","Sharks are eaten by fish.","Fish is eat by sharks."],e:"المفعول به (fish) يصير أوّل الجملة.",b:1},
-{q:"Camels store fat in their bodies. → Fat …… in camels’ bodies.",o:["is stored","are stored","stores","stored"],e:"fat مفرد ← is stored.",b:1},
-{q:"«nest» تعني:",o:["عُشّ","بركة","فرو","صحراء"],e:"The tree is where it builds a nest.",b:1},
-{q:"«look after» means:",o:["take care of","look like","look for","touch"],e:"look after = يعتني بـ.",b:1},
-{q:"The correct order: (ocean / where / dolphins / is / found / are / the)",o:["The ocean is where dolphins are found.","The ocean where is dolphins found are.","Dolphins are the ocean where found.","Where the ocean is dolphins found."],e:"Place + is + where + subject + verb.",b:1},
-{q:"Fish live in a small area of water called a ……",o:["pond","desert","nest","cave"],e:"pond = بركة."},
-{q:"I fell over and hurt my ……",o:["knee","fork","soap","jam"],e:"knee = ركبة.",b:1},
-{q:"Go to the …… and buy some medicine.",o:["pharmacy","stadium","pond","castle"],e:"pharmacy = صيدلية.",b:1},
-{q:"Wash your hands with …… and water.",o:["soap","salt","milk","jam"],e:"soap = صابون."},
-{q:"We feel better if we …… well. (Zero Conditional)",o:["rest","will rest","rested","resting"],e:"Zero: present + present.",b:1},
-{q:"You …… your exams if you study hard.",o:["will pass","pass will","passed","passing"],e:"نتيجة محدّدة في المستقبل ← will.",b:1},
-{q:"We use the Zero Conditional for:",o:["general facts","specific future results","past events","requests"],e:"الحقائق العامة.",b:1},
-{q:"If you don’t rest, you …… get well. (specific result)",o:["won’t","don’t will","not","aren’t"],e:"First Conditional negative: won’t."},
-{q:"Add …… salt and pepper.",o:["a little","a few","many","one"],e:"salt غير معدود ← a little.",b:1},
-{q:"Which is NOT countable?",o:["milk","eggs","olives","bananas"],e:"milk غير معدود."},
-{q:"A person who helps a lot is ……",o:["helpful","helper","helping","helped"],e:"-ful تكوّن صفة."},
-{q:"A big musical event where many people come to listen:",o:["concert","prize","member","stamp"],e:"concert = حفل موسيقي.",b:1},
-{q:"A traditional Arabic string instrument:",o:["oud","drum","violin","piano"],e:"oud = العود."},
-{q:"How long …… you played the drums?",o:["have","has","did","are"],e:"How long + have + you + V3.",b:1},
-{q:"I have taken lessons …… six years.",o:["for","since","ago","at"],e:"for + مدّة زمنية.",b:1},
-{q:"She’s been interested …… she was a baby.",o:["since","for","ago","in"],e:"since + نقطة البداية.",b:1},
-{q:"The Present Perfect talks about an activity in:",o:["the past and present","the past only","the future","now only"],e:"بدأ في الماضي ومستمر.",b:1},
-{q:"«collecting stamps» means جمع ……",o:["الطوابع","العملات","الصور","الأحجار"],e:"stamp = طابع."},
-{q:"I have visited the pyramids every summer for ten years. This describes:",o:["an unfinished routine","a finished action","an action never started","a future plan"],e:"have + V3 للروتين المستمر.",b:1},
-{q:"I have …… been there. Can you take me next time?",o:["never","just","since","for"],e:"لم يحدث أبدًا.",b:1},
-{q:"The noun from «invite» is:",o:["invitation","invition","invites","inviting"],e:"-ation / -ion.",b:1},
-{q:"A person who travels into space:",o:["astronaut","firefighter","police officer","journalist"],e:"astronaut = رائد فضاء.",b:1},
-{q:"A person who protects computers from online attacks:",o:["cybersecurity analyst","robotics engineer","astronaut","AI specialist"],e:"محلّل أمن سيبراني."},
-{q:"We sent our message …… they were designing the new city.",o:["while","when","because","so"],e:"while قبل الحدث الطويل.",b:1},
-{q:"When the team …… in the rocket, people were excited.",o:["left","were leaving","leaving","was leave"],e:"حدث قصير ← Simple Past.",b:1},
-{q:"The robotics engineer tested the software while the robot …… working.",o:["was","were","is","did"],e:"robot مفرد ← was.",b:1},
-{q:"Past Progressive is formed with:",o:["was / were + verb-ing","have + V3","will + verb","did + verb"],e:"was/were + -ing.",b:1},
-{q:"«missing» تعني:",o:["مفقود","مكسور","مشغول","سريع"],e:"The rabbit that was missing…"},
-{q:"The fire truck …… was parked outside didn’t move.",o:["which","who","where","what"],e:"شيء ← which/that.",b:1},
-{q:"We can’t use «which» for:",o:["people","things","animals","trucks"],e:"which للأشياء.",b:1},
-{q:"The people …… were inside the building were safe.",o:["who","which","where","what"],e:"people ← who."}
+{q:"اختر الصحيح:<div class='en'>Sofia usually ___ her bike to school.</div>",o:["rides", "is riding", "ride", "riding"],e:"<span class='en'>usually</span> تدل على عادة ← المضارع البسيط مع <span class='en'>s</span>."},
+{q:"العبارة المهذّبة بدلًا من <span class='en'>Go away!</span> في حوار All Sorts هي:",o:["In a minute.", "No way!", "Be quiet!", "Leave me!"],e:"نصح الأصدقاءُ <span class='en'>Bud</span> أن يقول <span class='en'>In a minute.</span> بدل <span class='en'>Go away!</span>"},
+{q:"اختر الصحيح:<div class='en'>It ___ a lot at the moment!</div>",o:["is raining", "rains", "rain", "rained"],e:"<span class='en'>at the moment</span> ← المضارع المستمر."},
+{q:"اختر الصحيح (قرار لحظة الكلام):<div class='en'>I ___ buy the tickets now.</div>",o:["will", "am going to", "might", "may not"],e:"<span class='en'>will</span> لقرار سريع لحظة الكلام."},
+{q:"ما معنى كلمة:<div class='en'>helmet</div>",o:["خوذة", "ربطة عنق", "بوابة", "بسكويت"],e:"<span class='en'>helmet</span> = خوذة نلبسها لحماية الرأس."},
+{q:"ما معنى كلمة:<div class='en'>gate</div>",o:["بوابة", "سيارة أجرة", "نافذة", "حديقة"],e:"<span class='en'>gate</span> = بوابة."},
+{q:"اختر الصحيح:<div class='en'>Nova has ___ hair.</div>",o:["the longest", "longer", "longest than", "more longer"],e:"التفضيل: <span class='en'>the + adj-est</span>."},
+{q:"ما معنى كلمة:<div class='en'>storyboard</div>",o:["لوحة رسومات مرتبة لمشاهد القصة", "سبورة الفصل", "كتاب قصص", "مسرح"],e:"<span class='en'>storyboard</span> = رسومات مرتبة لمشاهد قصة أو فيلم."},
+{q:"حوّل للمجهول:<div class='en'>Zoologists look after animals.</div>",o:["Animals are looked after by zoologists.", "Animals look after zoologists.", "Zoologists are looked after.", "Animals are look after by zoologists."],e:"<span class='en'>are + looked after + by</span>."},
+{q:"كم مدة بقاء الجمل دون شرب؟",o:["سبعة أشهر", "سبعة أيام", "شهر واحد", "سنة"],e:"بفضل سنامه الذي يُخزن فيه طعام إضافي."},
+{q:"ما معنى كلمة:<div class='en'>furry</div>",o:["مكسو بالفرو", "ثقيل", "ملون", "صامت"],e:"<span class='en'>furry</span> = مكسو بالفرو، مثل الثعلب."},
+{q:"ماذا كان «النمر» في الحديقة؟",o:["قطًّا", "كلبًا", "سلحفاة", "خنفساء"],e:"<span class='en'>Tigers aren't found in the park! That's just a cat!</span>"},
+{q:"اختر الكلمة المناسبة:<div class='en'>Shh! Be ___. The animals are sleeping.</div>",o:["quiet", "heavy", "extinct", "wild"],e:"<span class='en'>quiet</span> = هادئ / صامت."},
+{q:"ما معنى كلمة:<div class='en'>tortoise</div>",o:["سلحفاة برية", "أخطبوط", "بجعة", "جمل"],e:"<span class='en'>tortoise</span> = سلحفاة برية."},
+{q:"ما معنى <span class='en'>look like</span>؟",o:["يشبه", "يعتني بـ", "يبحث عن", "ينظر إلى"],e:"<span class='en'>look like</span> = يشبه، بينما <span class='en'>look after</span> = يعتني بـ."},
+{q:"اختر الصحيح:<div class='en'>The trees ___ where monkeys play.</div>",o:["are", "is", "am", "was"],e:"<span class='en'>trees</span> جمع ← <span class='en'>are</span>."},
+{q:"أي مجموعة كلها غير معدودة؟",o:["salt, milk, jam, cereal", "eggs, olives, bananas", "strawberries, eggs, milk", "olives, salt, bananas"],e:"هذه نستخدم معها <span class='en'>a little</span>."},
+{q:"ما معنى كلمة:<div class='en'>bandage</div>",o:["ضمادة", "دواء", "صابون", "صيدلية"],e:"<span class='en'>Put on a bandage.</span>"},
+{q:"اختر الصحيح:<div class='en'>If you ___ hard, you will pass your exams.</div>",o:["study", "will study", "studied", "studying"],e:"لا نستخدم <span class='en'>will</span> بعد <span class='en'>if</span>."},
+{q:"أين نشتري الدواء؟",o:["pharmacy", "restaurant", "fire station", "desert"],e:"<span class='en'>Go to the pharmacy and buy some medicine.</span>"},
+{q:"أي دولة تستخدم صلصة السمك <span class='en'>fish sauce</span>؟",o:["Thailand", "Italy", "Morocco", "France"],e:"مكونات <span class='en'>Pad Thai</span>."},
+{q:"في قصة <span class='en'>Pancakes for Breakfast</span>، ما علاقة عمر بفهد؟",o:["أخوه", "ابن عمه", "صديقه", "جاره"],e:"<span class='en'>Fahad was making pancakes with his brother Omar.</span>"},
+{q:"ما معنى كلمة:<div class='en'>sore</div>",o:["مؤلم", "مكسور", "نظيف", "سريع"],e:"<span class='en'>It's really sore.</span> = يؤلمني كثيرًا."},
+{q:"اختر الصحيح:<div class='en'>I ___ my hand on the barbecue.</div>",o:["burned", "broke", "fell over", "washed"],e:"<span class='en'>burn</span> = يحرق."},
+{q:"اختر الصحيح:<div class='en'>I have played the drums ___ two years.</div>",o:["for", "since", "in", "at"],e:"<span class='en'>for</span> + مدة زمنية."},
+{q:"الاسم من الفعل <span class='en'>invent</span> هو:",o:["invention", "inventation", "inventing", "invent"],e:"نضيف <span class='en'>-ion</span>: <span class='en'>invention</span>."},
+{q:"منذ متى توجد الطبول؟",o:["أكثر من 8,000 سنة", "5,000 سنة", "2,500 سنة", "1,000 سنة"],e:"<span class='en'>Drums have existed for more than 8,000 years!</span>"},
+{q:"ما معنى كلمة:<div class='en'>member</div>",o:["عضو", "معلم", "نادٍ", "برنامج"],e:"<span class='en'>Become a member of the summer music program!</span>"},
+{q:"متى أقيم مهرجان الجنادرية أول مرة؟",o:["1985", "1995", "2010", "1975"],e:"<span class='en'>It was first celebrated in 1985.</span>"},
+{q:"اختر الصحيح:<div class='en'>I ___ 33 stamps so far.</div>",o:["have collected", "collect", "am collect", "collected have"],e:"<span class='en'>so far</span> (حتى الآن) ← المضارع التام."},
+{q:"كم هرمًا في العالم تقريبًا؟",o:["2,500", "5,000", "8,000", "1,985"],e:"<span class='en'>There are around 2,500 pyramids in the world.</span>"},
+{q:"الاسم من الفعل <span class='en'>educate</span> هو:",o:["education", "educateion", "educator", "educating"],e:"نحذف <span class='en'>e</span> ونضيف <span class='en'>-ion</span>."},
+{q:"ما معنى كلمة:<div class='en'>rocket</div>",o:["صاروخ", "طائرة", "قمر صناعي", "روبوت"],e:"<span class='en'>rocket</span> = صاروخ."},
+{q:"ماذا قررت رنا في النهاية؟",o:["تحديث كلمات المرور", "حذف هاتفها", "الرد على الرسالة", "زيارة الموقع"],e:"<span class='en'>I decided to update my passwords, too!</span>"},
+{q:"ما معنى كلمة:<div class='en'>firefighter</div>",o:["رجل إطفاء", "شرطي", "طبيب", "مسعف"],e:"<span class='en'>fire + fighter</span>."},
+{q:"اختر الصحيح:<div class='en'>The astronaut was crying ___ the rocket landed.</div>",o:["when", "who", "which", "where"],e:"حدث جارٍ + when + حدث وقع (هبطت المركبة)."},
+{q:"اختر الصحيح:<div class='en'>The neighbor ___ lost the rabbit lives next door.</div>",o:["who", "which", "where", "what"],e:"<span class='en'>neighbor</span> شخص ← <span class='en'>who</span>."},
+{q:"ما معنى كلمة:<div class='en'>ambulance</div>",o:["سيارة إسعاف", "سيارة إطفاء", "سيارة شرطة", "حافلة"],e:"<span class='en'>ambulance</span> = سيارة إسعاف."},
+{q:"ما معنى <span class='en'>artificial intelligence</span>؟",o:["الذكاء الاصطناعي", "الأمن السيبراني", "الفضاء", "رسالة فيديو"],e:"<span class='en'>The new city will use artificial intelligence.</span>"},
+{q:"اختر الصحيح:<div class='en'>They ___ a new city while the rocket was traveling in space.</div>",o:["were designing", "was designing", "designs", "are designing"],e:"<span class='en'>They</span> مع <span class='en'>were + -ing</span>."}
 ];
 const app=document.getElementById('app');
 const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 let order,i,score,wrong;
 function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
 function start(){
-  app.innerHTML=`<h1>الاختبار الشامل</h1>
-  <p style="margin-top:8px">جميع الدروس · الإنجليزي سادس ابتدائي · ف١</p>
+  app.innerHTML=`<h1>تدريب شامل — إنجليزي سادس</h1>
+  <p style="margin-top:8px">Part 1 · الترحيب والوحدات ١–٤</p>
   <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تظهر واحدًا تلو الآخر. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح قصير، وفي النهاية تظهر نتيجتك.</p>
   <button class="btn" id="go">ابدأ الاختبار</button>`;
   document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};
@@ -133,7 +123,7 @@ function answer(btn,q){
 }
 function result(){
   const pct=Math.round(score/Q.length*100);
-  const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+  const msg=pct>=90?'أجبت جيدًا عن هذا التدريب. أكمل التدريب التحريري والكتابة في الملخص 👍':pct>=70?'جيد، راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة':'راجع الدرس في الملخص ثم أعد المحاولة 💪';
   app.innerHTML=`<h1>نتيجتك</h1>
   <div class="score">${ar(score)} / ${ar(Q.length)}</div>
   <p class="msg">${msg}</p>

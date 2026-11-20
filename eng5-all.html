@@ -46,77 +46,57 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:10px 16px 24px}
 <body>
 <header><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="16" width="32" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/><polygon points="14,27 53,27 50,38 11,38" fill="#D7F25C"/><rect x="28" y="44" width="22" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/></svg>ملخصي</div><div class="sub">اللغة الإنجليزية · الصف الخامس الابتدائي · الفصل الأول</div></header>
 <main><div class="card" id="app"></div></main>
-<footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
+<footer>إعداد ملخّصي · تدريب مساعد بأسئلة اختيار من متعدد؛ لا يغني عن الكتاب ولا عن التدريب الكتابي في الملخص، ولا يقيس الجاهزية للاختبار.</footer>
 <script>
 const Q=[
-{q:"Complete: ___ classes do you have on Wednesdays?",o:["How many", "How long", "How much time", "How far"],e:"classes اسم جمع يُعدّ، فنسأل عن العدد بـ How many."},
-{q:"Complete: ___ is the lunch break?",o:["How long", "How many", "How often", "How old"],e:"نسأل عن مدة الاستراحة بـ How long."},
-{q:"Which question asks about the number of teachers?",o:["How many teachers do you have?", "How long are your teachers?", "How tall do you have?", "How teacher is?"],e:"How many + اسم جمع للسؤال عن العدد."},
-{q:"What is the past of “eat”?",o:["ate", "eated", "eaten", "eat"],e:"eat → ate (فعل شاذ)."},
-{q:"What is the past of “drink”?",o:["drank", "drinked", "drunk", "drinks"],e:"drink → drank."},
-{q:"What is the past of “go”?",o:["went", "goed", "gone", "going"],e:"go → went."},
-{q:"What is the past of “meet”?",o:["met", "meeted", "meat", "meets"],e:"meet → met."},
-{q:"Choose the correct sentence.",o:["He fell asleep at 8 p.m.", "He falled asleep at 8 p.m.", "He fall asleep at 8 p.m.", "He falls asleep at 8 p.m. yesterday."],e:"fall → fell في الماضي."},
-{q:"Complete: He ___ (tall) student in the class.",o:["is the tallest", "is taller the", "is the most tall", "is tallest the"],e:"الصفة القصيرة تأخذ the + est: the tallest."},
-{q:"Complete: This is the ___ class for me. (difficult)",o:["most difficult", "difficultest", "difficulter", "more difficult"],e:"الصفة الطويلة تأخذ the most + صفة."},
-{q:"Complete: She is my ___ friend. (funny)",o:["funniest", "funnyest", "most funny", "funnier"],e:"y تتحول إلى iest: funny → funniest."},
-{q:"When is the food festival in the dialogue?",o:["November 16th", "January 1st", "early March", "September 30th"],e:"الحوار: It’s on November 16th."},
-{q:"Which word means “ضخم جدًا”?",o:["enormous", "tidy", "noisy", "lucky"],e:"enormous = ضخم جدًا."},
-{q:"Which word means “ودود”?",o:["friendly", "unkind", "messy", "horrible"],e:"friendly = ودود."},
-{q:"What is the opposite of “kind”?",o:["unkind", "unfriendly", "untidy", "unusual"],e:"un- + kind = unkind."},
-{q:"Choose the correct word: Last Monday my team ___.",o:["won", "win", "wins", "winning"],e:"Last Monday تدل على الماضي، وwin → won."},
-{q:"Choose the correct word: On Tuesdays, we ___ to music.",o:["dance", "danced", "dancing", "dancer"],e:"On Tuesdays عادة متكررة فنستخدم المضارع: dance."},
-{q:"Which sentence is in the simple past?",o:["I didn’t watch the movie.", "I don’t watch movies on Mondays.", "She paints pictures.", "They go every day."],e:"didn’t + V1 هو نفي الماضي البسيط."},
-{q:"Which verb is an ACTION verb?",o:["cook", "love", "need", "know"],e:"cook فعل حركة (عمل نفعله)."},
-{q:"“My cousin is playing there right now.” This sentence talks about…",o:["an action happening now", "a feeling", "a past event", "a fact"],e:"is playing + right now = حركة مستمرة الآن."},
-{q:"Where did yarn bombing start?",o:["Texas, USA", "Thailand", "France", "Saudi Arabia"],e:"بدأ في Texas بأمريكا."},
-{q:"What is Rose’s special interest?",o:["Origami", "Soap carving", "Video games", "Football"],e:"Rose’s special interest is origami."},
-{q:"How did Rose’s interest start?",o:["She found an origami book on the sidewalk", "She saw a French movie", "Her teacher gave her a book", "She joined a club first"],e:"بعد يوم سيئ وجدت كتاب origami في الشارع."},
-{q:"Why was Lia upset?",o:["Chloe invited a new friend on their special day", "Chloe broke her game", "Lia lost a race", "Ava was rude"],e:"Chloe دعت Ava يوم الأربعاء وهو وقتهما معًا."},
-{q:"Which word means “قبو”?",o:["basement", "entrance", "gate", "shelf"],e:"basement = القبو (الطابق السفلي)."},
-{q:"Which word means “مدخل”?",o:["entrance", "layout", "oven", "screen"],e:"entrance = مدخل."},
-{q:"What do we use to open the door?",o:["A key", "A fridge", "A cushion", "A screen"],e:"key = مفتاح."},
-{q:"Which word means “بدلًا من ذلك”?",o:["instead", "actually", "also", "later"],e:"instead = بدلًا من ذلك."},
-{q:"What is the short form of “will not”?",o:["won’t", "willn’t", "don’t", "can’t"],e:"will not = won’t."},
-{q:"We use “will” for…",o:["decisions made at the moment", "plans arranged before", "past events", "facts about the past"],e:"will للقرارات اللحظية."},
-{q:"In “be going to”, which word changes?",o:["be (am / is / are)", "going", "to", "the base verb"],e:"يتغيّر فعل be فقط: am / is / are."},
-{q:"Complete: She ___ to come to my house after school.",o:["is going", "will going", "are going", "go going"],e:"الفاعل she → is going to."},
-{q:"What was Sophie nervous about at the beginning?",o:["Leaving her friends and living in a new neighborhood", "Going to school", "Her new teacher", "A big exam"],e:"كانت قلقة من ترك أصدقائها والعيش في حي جديد."},
-{q:"What came out of Sophie’s window?",o:["A slide", "A rope", "A ladder", "A tree"],e:"رأت slide زحليقة تنزل من النافذة إلى الحديقة."},
-{q:"Why is Kai redesigning his bedroom?",o:["He won a competition", "It was his birthday", "He moved", "His parents asked"],e:"فاز بمسابقة Young Architects."},
-{q:"When does Saudi Arabia host the World Cup?",o:["2034", "2030", "2026", "2040"],e:"ستستضيف السعودية كأس العالم 2034."},
-{q:"Who flies airplanes?",o:["A pilot", "A mechanic", "A waiter", "A singer"],e:"pilot = طيّار."},
-{q:"Who fixes cars?",o:["A mechanic", "A pilot", "A journalist", "An artist"],e:"mechanic = ميكانيكي."},
-{q:"Who reports the news?",o:["A journalist", "An engineer", "A singer", "A pilot"],e:"journalist = صحفي."},
-{q:"Who helps passengers on a plane?",o:["A flight attendant", "A waiter", "A driver", "A manager"],e:"flight attendant = مضيف طيران."},
-{q:"A person who works with robots’ problems is a robot ___.",o:["therapist", "pilot", "waiter", "driver"],e:"robot therapist يتحدث مع الروبوتات ويفهم مشاكلها."},
-{q:"Which word is used for a LIKELY future plan?",o:["may", "might", "isn’t going to", "didn’t"],e:"may = محتمل."},
-{q:"“He isn’t going to act on TV.” This plan is…",o:["impossible (0%)", "definite (100%)", "possible (50%)", "likely (70%)"],e:"isn’t going to = مستحيل."},
-{q:"Choose the correct question tag: That was an office, ___?",o:["wasn’t it", "was it", "isn’t it", "did it"],e:"جملة مثبتة بالماضي فالذيل منفي: wasn’t it."},
-{q:"Choose the correct question tag: She enjoys taking photos, ___?",o:["doesn’t she", "isn’t she", "didn’t she", "does she"],e:"enjoys مضارع للغائبة: doesn’t she."},
-{q:"Why is Emilia sad in the story?",o:["She doesn’t know what to study in college", "She lost her notebook", "She has no friends", "She is sick"],e:"لا تعرف ماذا ستدرس في الجامعة."},
-{q:"Which suffix is added to “art”, “tour”, “novel”?",o:["-ist", "-ing", "-ed", "-ly"],e:"artist · tourist · novelist."},
-{q:"How many new AI jobs will be created (Social Studies)?",o:["15,000", "1,000", "150", "5,000"],e:"نحو 15,000 وظيفة جديدة في الذكاء الاصطناعي."},
-{q:"Which word means “دقيق”?",o:["flour", "sugar", "honey", "butter"],e:"flour = دقيق."},
-{q:"Which word means “يحرّك”?",o:["stir", "pour", "cut", "bake"],e:"stir = يحرّك."},
-{q:"Which word means “يقيس”?",o:["measure", "taste", "smell", "fetch"],e:"measure = يقيس."},
-{q:"Which word means “يُحضر”?",o:["fetch", "bake", "cut", "stir"],e:"fetch = يُحضر."},
-{q:"Complete: You ___ better wash your hands before you begin.",o:["had", "should", "has", "are"],e:"had better للتحذير."},
-{q:"“You should turn on the oven first.” It is similar to…",o:["It’s a good idea to turn on the oven first.", "It’s a bad idea.", "Don’t worry about it.", "It’s impossible."],e:"should = it’s a good idea to."},
-{q:"Which question is correct?",o:["Should I use eggs in the mixture?", "Should use I eggs?", "Had I better eggs?", "Do should I use eggs?"],e:"Should + فاعل + الفعل الأساسي."},
-{q:"Complete: We use honey ___ we don’t have sugar.",o:["if", "but", "because of", "so"],e:"النتيجة + if + الشرط."},
-{q:"Where is Layla at the beginning of the story?",o:["In her cooking class", "At home", "At the market", "In the park"],e:"وصلت إلى حصة الطبخ."},
-{q:"Which ingredient made everyone love Layla’s cookies?",o:["Carrots", "Garlic", "Onion", "Broccoli"],e:"الجزر هو سر الكوكيز الناجحة."},
-{q:"In “Food and Sports”, what should you NOT do after 7 p.m.?",o:["Eat (you won’t sleep well)", "Drink water", "Read", "Walk"],e:"You’d better not eat after 7 p.m."},
-{q:"Which food group gives you energy?",o:["Starches", "Fatty foods", "Dairy", "Candy"],e:"النشويات (potatoes, pasta, rice) تعطي الطاقة."}
+{q:"كيف يُكتب الرقم 508؟",o:["five hundred eight", "five hundred eighty", "fifty-eight", "five thousand eight"],e:"<span class='en'>508 = five hundred eight</span>."},
+{q:"ما معنى كلمة:<div class='en'>snail</div>",o:["حلزون", "أسد", "قوس قزح", "جبل"],e:"<span class='en'>snail</span> = حلزون."},
+{q:"اختر الصحيح:<div class='en'>___ students are in your class?</div>",o:["How many", "How long", "How much", "How old"],e:"<span class='en'>students</span> جمع معدود ← <span class='en'>How many</span>."},
+{q:"اختر الصحيح:<div class='en'>This is the ___ classroom.</div>",o:["biggest", "bigest", "bigger", "most big"],e:"نكرر g: <span class='en'>big → biggest</span>."},
+{q:"ما معنى كلمة:<div class='en'>late</div>",o:["متأخر", "مبكر", "متعب", "طويل"],e:"<span class='en'>Why are you late?</span>"},
+{q:"ما معنى كلمة:<div class='en'>early</div>",o:["مبكر", "متأخر", "سريع", "قديم"],e:"<span class='en'>I think it's early in September.</span>"},
+{q:"اختر الصحيح:<div class='en'>He ___ pancakes with eggs for breakfast.</div>",o:["ate", "eat", "eated", "eats"],e:"<span class='en'>eat → ate</span>."},
+{q:"اختر الصحيح:<div class='en'>Class started ten minutes ___!</div>",o:["ago", "late", "early", "month"],e:"<span class='en'>ago</span> = منذ / قبل."},
+{q:"اختر الصحيح:<div class='en'>My cousin ___ there now.</div>",o:["is playing", "plays", "play", "played"],e:"فعل حركة مع <span class='en'>now</span> ← ing."},
+{q:"ما معنى كلمة:<div class='en'>popular</div>",o:["مشهور / محبوب", "مهم", "مرتب", "ممتاز"],e:"<span class='en'>the most popular activity</span>"},
+{q:"كيف بدأ اهتمام Rose بالأوريغامي؟",o:["وجدت كتابًا على الرصيف بعد يوم فظيع", "علّمتها أمها", "في المدرسة", "من فيلم"],e:"<span class='en'>I found a book about origami on the sidewalk.</span>"},
+{q:"اختر الكلمة المناسبة:<div class='en'>Normally I have a very ___ room because I don't like cleaning it.</div>",o:["untidy", "tidy", "lucky", "friendly"],e:"لا تحب التنظيف ← غرفة غير مرتبة."},
+{q:"ما معنى كلمة:<div class='en'>lucky</div>",o:["محظوظ", "مشهور", "مضحك", "حزين"],e:"<span class='en'>You might be lucky and win a prize!</span>"},
+{q:"ما معنى كلمة:<div class='en'>friendly</div>",o:["ودود", "غاضب", "متعب", "غريب"],e:"<span class='en'>Everyone is friendly.</span>"},
+{q:"متى تذهب Rose لنادي الأوريغامي؟",o:["كل خميس", "كل اثنين", "كل يوم", "مرة في الشهر"],e:"<span class='en'>every Thursday</span>"},
+{q:"من الأكثر ثقة في مقابلة الناس الجدد؟",o:["Ava", "Lia", "Chloe", "Rose"],e:"صافحت ليا مبتسمة."},
+{q:"ما معنى كلمة:<div class='en'>materials</div>",o:["مواد", "مقاسات", "مفاتيح", "شاشات"],e:"<span class='en'>strong materials</span>"},
+{q:"ما معنى كلمة:<div class='en'>instead</div>",o:["بدلًا من ذلك", "لاحقًا", "أيضًا", "في الحقيقة"],e:"<span class='en'>Can we have chicken instead?</span>"},
+{q:"ما معنى كلمة:<div class='en'>entrance</div>",o:["مدخل", "مطبخ", "رف", "زاوية"],e:"<span class='en'>entrance</span> = مدخل."},
+{q:"اختر الصحيح:<div class='en'>I ___ sleep at Luna's house tonight. (planned)</div>",o:["am going to", "will", "am", "going"],e:"خطة مسبقة ← <span class='en'>am going to</span>."},
+{q:"اختر الصحيح:<div class='en'>This pizza was awful! I ___ buy it again.</div>",o:["won't", "will", "am", "did"],e:"قرار بعدم الفعل ← <span class='en'>won't</span>."},
+{q:"ما معنى كلمة:<div class='en'>basement</div>",o:["قبو", "سطح", "مدخل", "بوابة"],e:"<span class='en'>basement</span> = قبو تحت البيت."},
+{q:"اختر الصحيح:<div class='en'>She ___ going to come to my house after school.</div>",o:["is", "are", "am", "will"],e:"<span class='en'>She is going to</span>."},
+{q:"ما معنى كلمة:<div class='en'>measurements</div>",o:["مقاسات", "مواد", "مخطط", "تصميم"],e:"<span class='en'>change the measurements of my bedroom</span>"},
+{q:"مستحيل 0%:<div class='en'>He ___ act on TV.</div>",o:["isn't going to", "may", "might", "is going to"],e:"<span class='en'>isn't going to</span>."},
+{q:"اختر الصحيح:<div class='en'>You haven't managed a team before, ___?</div>",o:["have you", "haven't you", "did you", "do you"],e:"منفية ← مثبت."},
+{q:"كم وظيفة جديدة في الذكاء الاصطناعي بحلول 2030؟",o:["15,000", "11 مليون", "47", "6"],e:"<span class='en'>15,000 new jobs in artificial intelligence</span>"},
+{q:"اختر الصحيح:<div class='en'>You saw a famous actor, ___?</div>",o:["didn't you", "don't you", "weren't you", "did you"],e:"<span class='en'>saw</span> ماضٍ ← <span class='en'>didn't</span>."},
+{q:"من يقود الطائرة؟",o:["pilot", "driver", "flight attendant", "engineer"],e:"<span class='en'>I'm a pilot. I fly airplanes.</span>"},
+{q:"الاسم من <span class='en'>cycle</span> بـ -ist:",o:["cyclist", "cycleist", "cyclest", "cyclar"],e:"نحذف e: <span class='en'>cyclist</span>."},
+{q:"<span class='en'>food engineers</span> في 2040:",o:["يبتكرون ويصممون الطعام", "يطبخون في المطاعم", "يزرعون الطعام", "يبيعون الطعام"],e:"<span class='en'>They are going to create and design the food.</span>"},
+{q:"احتمال 50%:<div class='en'>You ___ fly all over the world.</div>",o:["may", "are going to", "isn't going to", "will not"],e:"<span class='en'>may</span> = محتمل."},
+{q:"ما معنى كلمة:<div class='en'>ingredients</div>",o:["مكوّنات", "وصفة", "وجبة خفيفة", "رائحة"],e:"<span class='en'>Get your ingredients ready first.</span>"},
+{q:"ما معنى كلمة:<div class='en'>dough</div>",o:["عجين", "زبدة", "عسل", "زبادي"],e:"<span class='en'>If the dough is wet, add more flour.</span>"},
+{q:"إذا لم تأكل اللحم، ماذا تأكل من البروتين؟",o:["الفول أو البيض", "الخبز", "الزبدة", "السكر"],e:"<span class='en'>eat beans or eggs instead!</span>"},
+{q:"اختر الصحيح:<div class='en'>If you want a sweet snack, you ___ sugar.</div>",o:["add", "will added", "added", "adding"],e:"الشرطية الصفرية: مضارع."},
+{q:"ما معنى كلمة:<div class='en'>countertop</div>",o:["سطح المطبخ", "الفرن", "الثلاجة", "الرف"],e:"<span class='en'>She puts her ingredients on the countertop.</span>"},
+{q:"إضافة توضع على وجه الطعام:",o:["topping", "dough", "flour", "recipe"],e:"<span class='en'>banana and yogurt topping</span>"},
+{q:"اختر الصحيح:<div class='en'>You shouldn't ___ too much sugar.</div>",o:["use", "to use", "using", "uses"],e:"بعد <span class='en'>should</span> فعل مجرد."},
+{q:"ما الذي يساعد عندما يؤلمك رأسك؟",o:["شرب الماء", "أكل السكر", "تفويت الوجبات", "الأكل بعد 7 مساءً"],e:"حسب نص الدرس: شرب الماء يساعد (محتوى القراءة وليس نصيحة طبية عامة)."}
 ];
 const app=document.getElementById('app');
 const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 let order,i,score,wrong;
 function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
 function start(){
-  app.innerHTML=`<h1>الاختبار الشامل — إنجليزي خامس</h1>
-  <p style="margin-top:8px">Part 1 · وحدة الترحيب + الوحدات ١–٤ (ص ٤–٥٧)</p>
+  app.innerHTML=`<h1>تدريب شامل — إنجليزي خامس</h1>
+  <p style="margin-top:8px">Part 1 · الترحيب والوحدات ١–٤</p>
   <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تظهر واحدًا تلو الآخر. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح قصير، وفي النهاية تظهر نتيجتك.</p>
   <button class="btn" id="go">ابدأ الاختبار</button>`;
   document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};
@@ -143,7 +123,7 @@ function answer(btn,q){
 }
 function result(){
   const pct=Math.round(score/Q.length*100);
-  const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+  const msg=pct>=90?'أجبت جيدًا عن هذا التدريب. أكمل التدريب التحريري والكتابة في الملخص 👍':pct>=70?'جيد، راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة':'راجع الدرس في الملخص ثم أعد المحاولة 💪';
   app.innerHTML=`<h1>نتيجتك</h1>
   <div class="score">${ar(score)} / ${ar(Q.length)}</div>
   <p class="msg">${msg}</p>

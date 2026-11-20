@@ -46,7 +46,7 @@ footer{text-align:center;font-size:12px;color:var(--mut);padding:10px 16px 24px}
 <body>
 <header><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="16" width="32" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/><polygon points="14,27 53,27 50,38 11,38" fill="#D7F25C"/><rect x="28" y="44" width="22" height="5" rx="2.5" fill="#FFFFFF" fill-opacity="0.55"/></svg>ملخصي</div><div class="sub">اللغة الإنجليزية · الصف الثالث الابتدائي · الفصل الأول</div></header>
 <main><div class="card" id="app"></div></main>
-<footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
+<footer>إعداد ملخّصي · تدريب مساعد بأسئلة اختيار من متعدد؛ لا يغني عن الكتاب ولا عن التدريب الكتابي في الملخص، ولا يقيس الجاهزية للاختبار.</footer>
 <script>
 const Q=[
 {q:"Which word means “يسكن / يعيش”?",o:["live", "like", "look", "love"],e:"live = يسكن."},
@@ -103,7 +103,7 @@ const Q=[
 {q:"Which job is “مهندس معماري”?",o:["architect", "engineer", "teacher", "baker"],e:"architect = مهندس معماري."},
 {q:"Which job is “محامٍ”?",o:["lawyer", "nurse", "writer", "scientist"],e:"lawyer = محامٍ."},
 {q:"Complete: What ___ they do?",o:["do", "does", "is", "are"],e:"مع they نستخدم do."},
-{q:"Choose: She’s ___ teacher.",o:["a", "an", "the", "some"],e:"teacher تبدأ بحرف ساكن ← a."},
+{q:"Choose a or an: She’s ___ teacher.",o:["a", "an", "two", "some"],e:"teacher تبدأ بصوت ساكن (ت) ← a."},
 {q:"In “Space Station Crew”, where does Abdullah the pilot work?",o:["In the space station", "In the train station", "In the hospital", "In the restaurant"],e:"In the space station."},
 {q:"Who helps sick people?",o:["A doctor", "A pilot", "A cook", "A firefighter"],e:"الطبيب يساعد المرضى."},
 {q:"Complete: When I grow up, I want to ___ a baker.",o:["be", "is", "am", "are"],e:"want to be."},
@@ -125,7 +125,7 @@ const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 let order,i,score,wrong;
 function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
 function start(){
-  app.innerHTML=`<h1>الاختبار الشامل — إنجليزي ثالث</h1>
+  app.innerHTML=`<h1>تدريب شامل — إنجليزي ثالث</h1>
   <p style="margin-top:8px">Part 1 · الوحدات ١–٦ وتدريبات الفونكس (ص ٢–٦١)</p>
   <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تظهر واحدًا تلو الآخر. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح قصير، وفي النهاية تظهر نتيجتك.</p>
   <button class="btn" id="go">ابدأ الاختبار</button>`;
@@ -153,7 +153,7 @@ function answer(btn,q){
 }
 function result(){
   const pct=Math.round(score/Q.length*100);
-  const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+  const msg=pct>=90?'أجبت جيدًا عن هذا التدريب. أكمل التدريب التحريري والكتابة في الملخص 👍':pct>=70?'جيد، راجع الأسئلة التي أخطأت فيها ثم أعد المحاولة':'راجع الدرس في الملخص ثم أعد المحاولة 💪';
   app.innerHTML=`<h1>نتيجتك</h1>
   <div class="score">${ar(score)} / ${ar(Q.length)}</div>
   <p class="msg">${msg}</p>

@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "في ضرب ١٣ × ١٢، ما ناتج الضرب الجزئي الأول (١٣ × ٢)؟", "o": ["٢٦", "١٣٠", "١٥٦", "٣٦"], "e": "١٣ × ٢ = ٢٦."}, {"lv": "سهل", "q": "في ضرب ١٣ × ١٢، ما ناتج الضرب الجزئي الثاني (١٣ × ١٠)؟", "o": ["١٣٠", "٢٦", "١٥٦", "٣٠"], "e": "١٣ × ١٠ = ١٣٠."}, {"lv": "سهل", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٢٤ × ٢١</span>:", "o": ["٥٠٤", "٢٤", "٤٨٠", "٥١٤"], "e": "٢٤ + ٤٨٠ = ٥٠٤."}, {"lv": "سهل", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٣٢ × ٢٥</span>:", "o": ["٨٠٠", "١٦٠", "٦٤٠", "٨١٠"], "e": "١٦٠ + ٦٤٠ = ٨٠٠."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">١٣ × ٥٤</span>:", "o": ["٧٠٢", "٥٢", "٦٥٠", "٧١٢"], "e": "٥٢ + ٦٥٠ = ٧٠٢."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">١٤١ × ٢٥</span>:", "o": ["٣٥٢٥", "٧٠٥", "٢٨٢٠", "٣٥٣٥"], "e": "٧٠٥ + ٢٨٢٠ = ٣٥٢٥."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٤٧٠ × ٥٦</span>:", "o": ["٢٦٣٢٠", "٢٨٢٠", "٢٣٥٠٠", "٢٦٣٣٠"], "e": "٢٨٢٠ + ٢٣٥٠٠ = ٢٦٣٢٠."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">١٦٥ × ٣١</span>:", "o": ["٥١١٥", "١٦٥", "٤٩٥٠", "٥١٢٥"], "e": "١٦٥ + ٤٩٥٠ = ٥١١٥."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٤٤١ × ٢٠</span>:", "o": ["٨٨٢٠", "٨٨٣٠", "٨٨١٠", "٨٩٢٠"], "e": "٠ + ٨٨٢٠ = ٨٨٢٠."}, {"lv": "متقدم", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٣٤٧ × ٨٩</span>:", "o": ["٣٠٨٨٣", "٣١٢٣", "٢٧٧٦٠", "٣٠٨٩٣"], "e": "٣١٢٣ + ٢٧٧٦٠ = ٣٠٨٨٣."}, {"lv": "متقدم", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٢٧٨ × ٢٥</span>:", "o": ["٦٩٥٠", "١٣٩٠", "٥٥٦٠", "٦٩٦٠"], "e": "١٣٩٠ + ٥٥٦٠ = ٦٩٥٠."}, {"lv": "متقدم", "q": "يتقاضى توفيق ١٢ ريالًا للساعة صباحًا و١٤ مساءً، ويعمل ٨ ساعات صباحًا و٤ مساءً. كم يتقاضى في ١٢ يومًا؟", "o": ["١٨٢٤", "١٥٢", "١٩٢٤", "١٦٢٤"], "e": "(٨ × ١٢ + ٤ × ١٤) × ١٢ = ١٥٢ × ١٢."}, {"lv": "متقدم", "q": "قال أحمد: ٣١ × ١٦٥ = ١٦٥ + ٤٩٥ = ٦٦٠. ما الخطأ؟", "o": ["نضرب ١٦٥ في ٣٠ وليس ٣", "لا يوجد خطأ", "نضرب ١٦٥ في ٣٠٠", "الجمع خاطئ"], "e": "١٦٥ × ٣٠ = ٤٩٥٠ فالناتج ٥١١٥."}];
+    const Q=[{"lv": "سهل", "q": "في ضرب<span class=\"mx\" dir=\"ltr\"> ١٣ × ١٢</span>، ما ناتج الضرب الجزئي الأول <span class=\"mx\" dir=\"ltr\">(١٣ × ٢)</span>؟", "o": ["٢٦", "١٣٠", "١٥٦", "٣٦"], "e": "<span class=\"mx\" dir=\"ltr\">١٣ × ٢ = ٢٦</span>."}, {"lv": "سهل", "q": "في ضرب<span class=\"mx\" dir=\"ltr\"> ١٣ × ١٢</span>، ما ناتج الضرب الجزئي الثاني <span class=\"mx\" dir=\"ltr\">(١٣ × ١٠)</span>؟", "o": ["١٣٠", "٢٦", "١٥٦", "٣٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٣ × ١٠ = ١٣٠</span>."}, {"lv": "سهل", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٢٤ × ٢١</span></span>:", "o": ["٥٠٤", "٢٤", "٤٨٠", "٥١٤"], "e": "<span class=\"mx\" dir=\"ltr\">٢٤ + ٤٨٠ = ٥٠٤</span>."}, {"lv": "سهل", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٣٢ × ٢٥</span></span>:", "o": ["٨٠٠", "١٦٠", "٦٤٠", "٨١٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٦٠ + ٦٤٠ = ٨٠٠</span>."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">١٣ × ٥٤</span></span>:", "o": ["٧٠٢", "٥٢", "٦٥٠", "٧١٢"], "e": "<span class=\"mx\" dir=\"ltr\">٥٢ + ٦٥٠ = ٧٠٢</span>."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">١٤١ × ٢٥</span></span>:", "o": ["٣٥٢٥", "٧٠٥", "٢٨٢٠", "٣٥٣٥"], "e": "<span class=\"mx\" dir=\"ltr\">٧٠٥ + ٢٨٢٠ = ٣٥٢٥</span>."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٤٧٠ × ٥٦</span></span>:", "o": ["٢٦٣٢٠", "٢٨٢٠", "٢٣٥٠٠", "٢٦٣٣٠"], "e": "<span class=\"mx\" dir=\"ltr\">٢٨٢٠ + ٢٣٥٠٠ = ٢٦٣٢٠</span>."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">١٦٥ × ٣١</span></span>:", "o": ["٥١١٥", "١٦٥", "٤٩٥٠", "٥١٢٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٦٥ + ٤٩٥٠ = ٥١١٥</span>."}, {"lv": "متوسط", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٤٤١ × ٢٠</span></span>:", "o": ["٨٨٢٠", "٨٨٣٠", "٨٨١٠", "٨٩٢٠"], "e": "<span class=\"mx\" dir=\"ltr\">٠ + ٨٨٢٠ = ٨٨٢٠</span>."}, {"lv": "متقدم", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٣٤٧ × ٨٩</span></span>:", "o": ["٣٠٨٨٣", "٣١٢٣", "٢٧٧٦٠", "٣٠٨٩٣"], "e": "<span class=\"mx\" dir=\"ltr\">٣١٢٣ + ٢٧٧٦٠ = ٣٠٨٨٣</span>."}, {"lv": "متقدم", "q": "أوجد ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٢٧٨ × ٢٥</span></span>:", "o": ["٦٩٥٠", "١٣٩٠", "٥٥٦٠", "٦٩٦٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٣٩٠ + ٥٥٦٠ = ٦٩٥٠</span>."}, {"lv": "متقدم", "q": "يتقاضى توفيق ١٢ ريالًا للساعة صباحًا و١٤ مساءً، ويعمل ٨ ساعات صباحًا و٤ مساءً. كم يتقاضى في ١٢ يومًا؟", "o": ["١٨٢٤", "١٥٢", "١٩٢٤", "١٦٢٤"], "e": "<span class=\"mx\" dir=\"ltr\">(٨ × ١٢ + ٤ × ١٤) × ١٢ = ١٥٢ × ١٢</span>."}, {"lv": "متقدم", "q": "قال أحمد:<span class=\"mx\" dir=\"ltr\"> ٣١ × ١٦٥ = ١٦٥ + ٤٩٥ = ٦٦٠</span>. ما الخطأ؟", "o": ["نضرب ١٦٥ في ٣٠ وليس ٣", "لا يوجد خطأ", "نضرب ١٦٥ في ٣٠٠", "الجمع خاطئ"], "e": "<span class=\"mx\" dir=\"ltr\">١٦٥ × ٣٠ = ٤٩٥٠</span> فالناتج ٥١١٥."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

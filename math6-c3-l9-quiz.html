@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,14 +51,14 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "قبل القسمة على كسر عشري نحوّل المقسوم عليه إلى:", "o": ["عدد كلي", "كسر اعتيادي", "صفر", "عدد سالب"], "e": "بضربه في قوة من ١٠."}, {"lv": "سهل", "q": "ناتج ٣٦ ÷ ٠٫٩ =", "o": ["٤٠", "٤", "٤٠٠", "٠٫٤"], "e": "٣٦٠ ÷ ٩ = ٤٠."}, {"lv": "سهل", "q": "ناتج ٣٦ ÷ ٠٫٠٩ =", "o": ["٤٠٠", "٤٠", "٤٠٠٠", "٤"], "e": "٣٦٠٠ ÷ ٩."}, {"lv": "سهل", "q": "ناتج ١٫٨ ÷ ٠٫٦ بالنماذج =", "o": ["٣", "٠٫٣", "٣٠", "١٫٢"], "e": "١٨ جزءًا من عشرة ÷ ٦ أجزاء."}, {"lv": "متوسط", "q": "لحساب ٧٫٢٨ ÷ ١٫٤ نضرب كلا العددين في:", "o": ["١٠", "١٠٠", "١", "٢"], "e": "ليصبح المقسوم عليه ١٤."}, {"lv": "متوسط", "q": "ناتج ٧٫٢٨ ÷ ١٫٤ =", "o": ["٥٫٢", "٥٢", "٠٫٥٢", "٨٫٦٨"], "e": "٧٢٫٨ ÷ ١٤ = ٥٫٢."}, {"lv": "متوسط", "q": "ناتج ٤٦ ÷ ٠٫٤ =", "o": ["١١٥", "١١٫٥", "١١٥٠", "٤٫٦"], "e": "٤٦٠ ÷ ٤."}, {"lv": "متوسط", "q": "ناتج ٠٫١٢ ÷ ٢٫٤ =", "o": ["٠٫٠٥", "٠٫٥", "٥", "٠٫٠٠٥"], "e": "١٫٢ ÷ ٢٤ = ٠٫٠٥."}, {"lv": "متوسط", "q": "ناتج ٥٫٠٤ ÷ ١٫٢ =", "o": ["٤٫٢", "٤٢", "٠٫٤٢", "٦٫٢٤"], "e": "٥٠٫٤ ÷ ١٢ = ٤٫٢."}, {"lv": "متقدم", "q": "كم قطعة طولها ٠٫٧٥ م تُقصّ من حبل طوله ١٢ م؟", "o": ["١٦", "٩", "١٦٠", "١٢٫٧٥"], "e": "١٢٠٠ ÷ ٧٥ = ١٦."}, {"lv": "متقدم", "q": "قرّب ٢٢٫٤ ÷ ٥٫٤ إلى أقرب جزء من عشرة:", "o": ["٤٫١", "٤٫٢", "٤٫٠", "٤٫٥"], "e": "٢٢٤ ÷ ٥٤ ≈ ٤٫١٤."}, {"lv": "متقدم", "q": "قرّب ٩٫٤ ÷ ٠٫٧ إلى أقرب جزء من مئة:", "o": ["١٣٫٤٣", "١٣٫٤٢", "١٣٫٤", "١٣٫٥"], "e": "٩٤ ÷ ٧ ≈ ١٣٫٤٢٨٥."}, {"lv": "متقدم", "q": "كتب طالب: ٤٦ ÷ ٠٫٤ = ٤٦٠ ÷ ٠٫٤. ما خطؤه؟", "o": ["ضرب المقسوم فقط في ١٠", "لا خطأ", "ضرب المقسوم عليه فقط", "قسم بدل الضرب"], "e": "يجب ضرب العددين معًا: ٤٦٠ ÷ ٤."}];
+    const Q=[{"lv": "سهل", "q": "قبل القسمة على كسر عشري نحوّل المقسوم عليه إلى:", "o": ["عدد كلي", "كسر اعتيادي", "صفر", "عدد سالب"], "e": "بضربه في قوة من ١٠."}, {"lv": "سهل", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٣٦ ÷ ٠٫٩</span> =", "o": ["٤٠", "٤", "٤٠٠", "٠٫٤"], "e": "<span class=\"mx\" dir=\"ltr\">٣٦٠ ÷ ٩ = ٤٠</span>."}, {"lv": "سهل", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٣٦ ÷ ٠٫٠٩</span> =", "o": ["٤٠٠", "٤٠", "٤٠٠٠", "٤"], "e": "<span class=\"mx\" dir=\"ltr\">٣٦٠٠ ÷ ٩</span>."}, {"lv": "سهل", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ١٫٨ ÷ ٠٫٦</span> بالنماذج =", "o": ["٣", "٠٫٣", "٣٠", "١٫٢"], "e": "١٨ جزءًا من عشرة ÷ ٦ أجزاء."}, {"lv": "متوسط", "q": "لحساب<span class=\"mx\" dir=\"ltr\"> ٧٫٢٨ ÷ ١٫٤</span> نضرب كلا العددين في:", "o": ["١٠", "١٠٠", "١", "٢"], "e": "ليصبح المقسوم عليه ١٤."}, {"lv": "متوسط", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٧٫٢٨ ÷ ١٫٤</span> =", "o": ["٥٫٢", "٥٢", "٠٫٥٢", "٨٫٦٨"], "e": "<span class=\"mx\" dir=\"ltr\">٧٢٫٨ ÷ ١٤ = ٥٫٢</span>."}, {"lv": "متوسط", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٤٦ ÷ ٠٫٤</span> =", "o": ["١١٥", "١١٫٥", "١١٥٠", "٤٫٦"], "e": "<span class=\"mx\" dir=\"ltr\">٤٦٠ ÷ ٤</span>."}, {"lv": "متوسط", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٠٫١٢ ÷ ٢٫٤</span> =", "o": ["٠٫٠٥", "٠٫٥", "٥", "٠٫٠٠٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٫٢ ÷ ٢٤ = ٠٫٠٥</span>."}, {"lv": "متوسط", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٥٫٠٤ ÷ ١٫٢</span> =", "o": ["٤٫٢", "٤٢", "٠٫٤٢", "٦٫٢٤"], "e": "<span class=\"mx\" dir=\"ltr\">٥٠٫٤ ÷ ١٢ = ٤٫٢</span>."}, {"lv": "متقدم", "q": "كم قطعة طولها ٠٫٧٥ م تُقصّ من حبل طوله ١٢ م؟", "o": ["١٦", "٩", "١٦٠", "١٢٫٧٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٢٠٠ ÷ ٧٥ = ١٦</span>."}, {"lv": "متقدم", "q": "قرّب<span class=\"mx\" dir=\"ltr\"> ٢٢٫٤ ÷ ٥٫٤</span> إلى أقرب جزء من عشرة:", "o": ["٤٫١", "٤٫٢", "٤٫٠", "٤٫٥"], "e": "<span class=\"mx\" dir=\"ltr\">٢٢٤ ÷ ٥٤</span> ≈ ٤٫١٤."}, {"lv": "متقدم", "q": "قرّب<span class=\"mx\" dir=\"ltr\"> ٩٫٤ ÷ ٠٫٧</span> إلى أقرب جزء من مئة:", "o": ["١٣٫٤٣", "١٣٫٤٢", "١٣٫٤", "١٣٫٥"], "e": "<span class=\"mx\" dir=\"ltr\">٩٤ ÷ ٧</span> ≈ ١٣٫٤٢٨٥."}, {"lv": "متقدم", "q": "كتب طالب:<span class=\"mx\" dir=\"ltr\"> ٤٦ ÷ ٠٫٤ = ٤٦٠ ÷ ٠٫٤</span>. ما خطؤه؟", "o": ["ضرب المقسوم فقط في ١٠", "لا خطأ", "ضرب المقسوم عليه فقط", "قسم بدل الضرب"], "e": "يجب ضرب العددين معًا:<span class=\"mx\" dir=\"ltr\"> ٤٦٠ ÷ ٤</span>."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
     function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
     function start(){
       app.innerHTML=`<h1>اختبار درس «القسمة على كسر عشري»</h1>
-      <p style="margin-top:8px">الفصل ٣ · الدرس ٩-٣ (ص ١٢٥–١٢٨)</p>
+      <p style="margin-top:8px">الفصل ٣ · الدرس ٩-٣ (ص ١٢٥–١٣٢)</p>
       <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تتدرّج من السهل إلى المتقدم. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح الحل، وفي النهاية تظهر نتيجتك.</p>
       <button class="btn" id="go">ابدأ الاختبار</button>`;
       document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

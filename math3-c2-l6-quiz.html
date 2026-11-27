@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٢٥٤ + ١٣٥ = ▢</span>", "o": ["٣٨٩", "٣٨٨", "٣٧٩", "٤٨٩"], "e": "٤ + ٥ = ٩ و٥ + ٣ = ٨ و٢ + ١ = ٣."}, {"lv": "سهل", "q": "كل ١٠ عشرات نعيد تجميعها إلى:", "o": ["مئة واحدة", "ألف واحد", "عشرة واحدة", "آحاد"], "e": "١٠ عشرات = ١٠٠."}, {"lv": "سهل", "q": "ما أول منزلة نبدأ بجمعها؟", "o": ["الآحاد", "المئات", "العشرات", "الألوف"], "e": "نبدأ من اليمين: الآحاد."}, {"lv": "سهل", "q": "ما تقدير ٢٠١ + ٢٩٨ بالتقريب إلى أقرب مئة؟", "o": ["٥٠٠", "٤٠٠", "٦٠٠", "٥٠"], "e": "٢٠٠ + ٣٠٠ = ٥٠٠."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">١٦٧ + ١٢٩ = ▢</span>", "o": ["٢٩٦", "٢٨٦", "٢٩٥", "٣٩٦"], "e": "٧ + ٩ = ١٦ ثم ٦ + ٢ + ١ = ٩ ثم ١ + ١ = ٢."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٢٨٥ + ١٤٨ = ▢</span>", "o": ["٤٣٣", "٣٣٣", "٤٣٢", "٥٣٣"], "e": "٥ + ٨ = ١٣ و٨ + ٤ + ١ = ١٣ و٢ + ١ + ١ = ٤."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٣٤٦ + ٧٨ = ▢</span>", "o": ["٤٢٤", "٤١٤", "٤٢٣", "٣٢٤"], "e": "٦ + ٨ = ١٤ و٤ + ٧ + ١ = ١٢ و٣ + ١ = ٤."}, {"lv": "متوسط", "q": "في المكتبتين ٢٣٨ و١٧٥ قصة. عدد القصص الكلي:", "o": ["٤١٣", "٣١٣", "٤١٢", "٥١٣"], "e": "٢٣٨ + ١٧٥ = ٤١٣."}, {"lv": "متوسط", "q": "قطع سائق ٣٠٩ كم و٢١٤ كم. المسافة الكلية:", "o": ["٥٢٣", "٥١٣", "٥٢٢", "٤٢٣"], "e": "٣٠٩ + ٢١٤ = ٥٢٣."}, {"lv": "متقدم", "q": "ناتج ٢٧٦ + ١٥٨ هو:", "o": ["٤٣٤", "٣٣٤", "٤٣٣", "٥٣٤"], "e": "١٤ + ١٢٠ + ٣٠٠ = ٤٣٤."}, {"lv": "متقدم", "q": "الرقم في ▢: ٣▢٥ + ١٢٧ = ٤٧٢", "o": ["٤", "٣", "٥", "٢"], "e": "٤٧٢ − ١٢٧ = ٣٤٥."}, {"lv": "متقدم", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">١٢٤ + ٢٣٥ + ١٤١ = ▢</span>", "o": ["٥٠٠", "٤٩٠", "٥١٠", "٤٠٠"], "e": "١٢٤ + ٢٣٥ = ٣٥٩ ثم ٣٥٩ + ١٤١ = ٥٠٠."}, {"lv": "متقدم", "q": "قال حسن: ١٦٥ + ٢٣٨ = ٣٠٣. الخطأ أنه:", "o": ["لم يضف المئة الناتجة من العشرات", "لم يجمع الآحاد", "بدأ بالمئات", "لا خطأ"], "e": "العشرات ٦ + ٣ + ١ = ١٠ فتصير مئة، والناتج ٤٠٣."}];
+    const Q=[{"lv": "سهل", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٢٥٤ + ١٣٥ = ▢</span></span>", "o": ["٣٨٩", "٣٨٨", "٣٧٩", "٤٨٩"], "e": "<span class=\"mx\" dir=\"ltr\">٤ + ٥ = ٩</span> و<span class=\"mx\" dir=\"ltr\">٥ + ٣ = ٨</span> و<span class=\"mx\" dir=\"ltr\">٢ + ١ = ٣</span>."}, {"lv": "سهل", "q": "كل ١٠ عشرات نعيد تجميعها إلى:", "o": ["مئة واحدة", "ألف واحد", "عشرة واحدة", "آحاد"], "e": "١٠ عشرات = ١٠٠."}, {"lv": "سهل", "q": "ما أول منزلة نبدأ بجمعها؟", "o": ["الآحاد", "المئات", "العشرات", "الألوف"], "e": "نبدأ من اليمين: الآحاد."}, {"lv": "سهل", "q": "ما تقدير<span class=\"mx\" dir=\"ltr\"> ٢٠١ + ٢٩٨</span> بالتقريب إلى أقرب مئة؟", "o": ["٥٠٠", "٤٠٠", "٦٠٠", "٥٠"], "e": "<span class=\"mx\" dir=\"ltr\">٢٠٠ + ٣٠٠ = ٥٠٠</span>."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">١٦٧ + ١٢٩ = ▢</span></span>", "o": ["٢٩٦", "٢٨٦", "٢٩٥", "٣٩٦"], "e": "<span class=\"mx\" dir=\"ltr\">٧ + ٩ = ١٦</span> ثم<span class=\"mx\" dir=\"ltr\"> ٦ + ٢ + ١ = ٩</span> ثم<span class=\"mx\" dir=\"ltr\"> ١ + ١ = ٢</span>."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٢٨٥ + ١٤٨ = ▢</span></span>", "o": ["٤٣٣", "٣٣٣", "٤٣٢", "٥٣٣"], "e": "<span class=\"mx\" dir=\"ltr\">٥ + ٨ = ١٣</span> و<span class=\"mx\" dir=\"ltr\">٨ + ٤ + ١ = ١٣</span> و<span class=\"mx\" dir=\"ltr\">٢ + ١ + ١ = ٤</span>."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٣٤٦ + ٧٨ = ▢</span></span>", "o": ["٤٢٤", "٤١٤", "٤٢٣", "٣٢٤"], "e": "<span class=\"mx\" dir=\"ltr\">٦ + ٨ = ١٤</span> و<span class=\"mx\" dir=\"ltr\">٤ + ٧ + ١ = ١٢</span> و<span class=\"mx\" dir=\"ltr\">٣ + ١ = ٤</span>."}, {"lv": "متوسط", "q": "في المكتبتين ٢٣٨ و١٧٥ قصة. عدد القصص الكلي:", "o": ["٤١٣", "٣١٣", "٤١٢", "٥١٣"], "e": "<span class=\"mx\" dir=\"ltr\">٢٣٨ + ١٧٥ = ٤١٣</span>."}, {"lv": "متوسط", "q": "قطع سائق ٣٠٩ كم و٢١٤ كم. المسافة الكلية:", "o": ["٥٢٣", "٥١٣", "٥٢٢", "٤٢٣"], "e": "<span class=\"mx\" dir=\"ltr\">٣٠٩ + ٢١٤ = ٥٢٣</span>."}, {"lv": "متقدم", "q": "ناتج<span class=\"mx\" dir=\"ltr\"> ٢٧٦ + ١٥٨</span> هو:", "o": ["٤٣٤", "٣٣٤", "٤٣٣", "٥٣٤"], "e": "<span class=\"mx\" dir=\"ltr\">١٤ + ١٢٠ + ٣٠٠ = ٤٣٤</span>."}, {"lv": "متقدم", "q": "عدد مئاته ٣ وآحاده ٥. رقم عشراته إذا كان مجموعه مع ١٢٧ يساوي ٤٧٢:", "o": ["٤", "٣", "٥", "٢"], "e": "<span class=\"mx\" dir=\"ltr\">٤٧٢ − ١٢٧ = ٣٤٥</span> والتحقق<span class=\"mx\" dir=\"ltr\"> ٣٤٥ + ١٢٧ = ٤٧٢</span>."}, {"lv": "متقدم", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">١٢٤ + ٢٣٥ + ١٤١ = ▢</span></span>", "o": ["٥٠٠", "٤٩٠", "٥١٠", "٤٠٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٢٤ + ٢٣٥ = ٣٥٩</span> ثم<span class=\"mx\" dir=\"ltr\"> ٣٥٩ + ١٤١ = ٥٠٠</span>."}, {"lv": "متقدم", "q": "قال حسن:<span class=\"mx\" dir=\"ltr\"> ١٦٥ + ٢٣٨ = ٣٠٣</span>. الخطأ أنه:", "o": ["لم يضف المئة الناتجة من العشرات", "لم يجمع الآحاد", "بدأ بالمئات", "لا خطأ"], "e": "العشرات<span class=\"mx\" dir=\"ltr\"> ٦ + ٣ + ١ = ١٠</span> فتصير مئة، والناتج ٤٠٣."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

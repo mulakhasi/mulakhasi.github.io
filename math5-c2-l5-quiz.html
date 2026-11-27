@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "ما ناتج جمع أي عدد والصفر؟", "o": ["العدد نفسه", "صفر", "العدد مضافًا إليه ١", "ضعف العدد"], "e": "خاصية العنصر المحايد الجمعي."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٧ + ١١ = ١١ + ٧</span>؟", "o": ["الإبدالية", "التجميعية", "العنصر المحايد الجمعي", "خاصية التوزيع"], "e": "تبديل ترتيب العددين."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٦٫٧٥ + ٠ = ٦٫٧٥</span>؟", "o": ["العنصر المحايد الجمعي", "الإبدالية", "التجميعية", "خاصية التوزيع"], "e": "الجمع إلى الصفر."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">(٣ + ٣٧) + ١١ = ٣ + (٣٧ + ١١)</span>؟", "o": ["التجميعية", "الإبدالية", "العنصر المحايد الجمعي", "خاصية التوزيع"], "e": "تغيير الأقواس مع بقاء الترتيب."}, {"lv": "متوسط", "q": "أوجد ذهنيًا: ١ + ٢٧ + ٩", "o": ["٣٧", "٣٨", "٣٦", "٣٠"], "e": "١ + ٩ = ١٠ ثم ١٠ + ٢٧ = ٣٧."}, {"lv": "متوسط", "q": "أوجد ذهنيًا: ١٣ + ٨٧ + ١١", "o": ["١١١", "١١٠", "١١٢", "١٠١"], "e": "١٣ + ٨٧ = ١٠٠ ثم ١٠٠ + ١١ = ١١١."}, {"lv": "متوسط", "q": "أوجد ذهنيًا: ٠٫٨ + ٥٫٦ + ٠٫٤", "o": ["٦٫٨", "٦٫٢", "٧٫٨", "٥٫٨"], "e": "٥٫٦ + ٠٫٤ = ٦ ثم ٦ + ٠٫٨ = ٦٫٨."}, {"lv": "متوسط", "q": "أوجد ذهنيًا: ١٨ + ٢٦", "o": ["٤٤", "٤٢", "٤٦", "٣٨"], "e": "١٨ + ٢ = ٢٠ ثم ٢٠ + ٢٤ = ٤٤."}, {"lv": "متوسط", "q": "أوجد ذهنيًا: ٢٫٥ + ٣٫٩ + ٠٫٥", "o": ["٦٫٩", "٧٫٩", "٦٫٤", "٧٫٤"], "e": "٢٫٥ + ٠٫٥ = ٣ ثم ٣ + ٣٫٩ = ٦٫٩."}, {"lv": "متقدم", "q": "العدد المفقود: ٢٧ + (١٣ + ٣٧) = (٢٧ + ؟) + ٣٧", "o": ["١٣", "٣٧", "٢٧", "٥٠"], "e": "الخاصية التجميعية: ١٣ تبقى مع ٢٧."}, {"lv": "متقدم", "q": "مجموع ٤٣ + ٥٨ + ٦٢ + ٥٧ + ٤٢ هو:", "o": ["٢٦٢", "٢٦٠", "٢٦٤", "٣٦٢"], "e": "٤٣ + ٥٧ = ١٠٠ و٥٨ + ٤٢ = ١٠٠ و١٠٠ + ١٠٠ + ٦٢ = ٢٦٢."}, {"lv": "متقدم", "q": "هل خاصية الإبدال صحيحة في الطرح؟", "o": ["لا، لأن ٨ − ٥ لا تساوي ٥ − ٨", "نعم، دائمًا", "نعم، للأعداد الصغيرة فقط", "لا، لأن الطرح لا يوجد له ناتج"], "e": "٨ − ٥ = ٣ لكن ٥ − ٨ لا يساوي ٣."}, {"lv": "متقدم", "q": "أي الجمل خاصيتها الإبدالية؟", "o": ["<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٨ + ١٫٩ + ٠٫١ = ١٫٩ + ٨ + ٠٫١</span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">(٦ + ٤) + ٩ = ٦ + (٤ + ٩)</span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">١٤ + ٠ = ١٤</span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٨ × ٣ = ٣ × ٨ + ١</span>"], "e": "تبديل ترتيب الأعداد."}];
+    const Q=[{"lv": "سهل", "q": "ما ناتج جمع أي عدد والصفر؟", "o": ["العدد نفسه", "صفر", "العدد مضافًا إليه ١", "ضعف العدد"], "e": "خاصية العنصر المحايد الجمعي."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٧ + ١١ = ١١ + ٧</span></span>؟", "o": ["الإبدالية", "التجميعية", "العنصر المحايد الجمعي", "خاصية التوزيع"], "e": "تبديل ترتيب العددين."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٦٫٧٥ + ٠ = ٦٫٧٥</span></span>؟", "o": ["العنصر المحايد الجمعي", "الإبدالية", "التجميعية", "خاصية التوزيع"], "e": "الجمع إلى الصفر."}, {"lv": "سهل", "q": "ما خاصية الجمع المستعملة: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">(٣ + ٣٧) + ١١ = ٣ + (٣٧ + ١١)</span></span>؟", "o": ["التجميعية", "الإبدالية", "العنصر المحايد الجمعي", "خاصية التوزيع"], "e": "تغيير الأقواس مع بقاء الترتيب."}, {"lv": "متوسط", "q": "أوجد ذهنيًا:<span class=\"mx\" dir=\"ltr\"> ١ + ٢٧ + ٩</span>", "o": ["٣٧", "٣٨", "٣٦", "٣٠"], "e": "<span class=\"mx\" dir=\"ltr\">١ + ٩ = ١٠</span> ثم<span class=\"mx\" dir=\"ltr\"> ١٠ + ٢٧ = ٣٧</span>."}, {"lv": "متوسط", "q": "أوجد ذهنيًا:<span class=\"mx\" dir=\"ltr\"> ١٣ + ٨٧ + ١١</span>", "o": ["١١١", "١١٠", "١١٢", "١٠١"], "e": "<span class=\"mx\" dir=\"ltr\">١٣ + ٨٧ = ١٠٠</span> ثم<span class=\"mx\" dir=\"ltr\"> ١٠٠ + ١١ = ١١١</span>."}, {"lv": "متوسط", "q": "أوجد ذهنيًا:<span class=\"mx\" dir=\"ltr\"> ٠٫٨ + ٥٫٦ + ٠٫٤</span>", "o": ["٦٫٨", "٦٫٢", "٧٫٨", "٥٫٨"], "e": "<span class=\"mx\" dir=\"ltr\">٥٫٦ + ٠٫٤ = ٦</span> ثم<span class=\"mx\" dir=\"ltr\"> ٦ + ٠٫٨ = ٦٫٨</span>."}, {"lv": "متوسط", "q": "أوجد ذهنيًا:<span class=\"mx\" dir=\"ltr\"> ١٨ + ٢٦</span>", "o": ["٤٤", "٤٢", "٤٦", "٣٨"], "e": "<span class=\"mx\" dir=\"ltr\">١٨ + ٢ = ٢٠</span> ثم<span class=\"mx\" dir=\"ltr\"> ٢٠ + ٢٤ = ٤٤</span>."}, {"lv": "متوسط", "q": "أوجد ذهنيًا:<span class=\"mx\" dir=\"ltr\"> ٢٫٥ + ٣٫٩ + ٠٫٥</span>", "o": ["٦٫٩", "٧٫٩", "٦٫٤", "٧٫٤"], "e": "<span class=\"mx\" dir=\"ltr\">٢٫٥ + ٠٫٥ = ٣</span> ثم<span class=\"mx\" dir=\"ltr\"> ٣ + ٣٫٩ = ٦٫٩</span>."}, {"lv": "متقدم", "q": "العدد المفقود:<span class=\"mx\" dir=\"ltr\"> ٢٧ + (١٣ + ٣٧) = (٢٧</span> + ؟) + ٣٧", "o": ["١٣", "٣٧", "٢٧", "٥٠"], "e": "الخاصية التجميعية: ١٣ تبقى مع ٢٧."}, {"lv": "متقدم", "q": "مجموع<span class=\"mx\" dir=\"ltr\"> ٤٣ + ٥٨ + ٦٢ + ٥٧ + ٤٢</span> هو:", "o": ["٢٦٢", "٢٦٠", "٢٦٤", "٣٦٢"], "e": "<span class=\"mx\" dir=\"ltr\">٤٣ + ٥٧ = ١٠٠</span> و<span class=\"mx\" dir=\"ltr\">٥٨ + ٤٢ = ١٠٠</span> و<span class=\"mx\" dir=\"ltr\">١٠٠ + ١٠٠ + ٦٢ = ٢٦٢</span>."}, {"lv": "متقدم", "q": "هل خاصية الإبدال صحيحة في الطرح؟", "o": ["لا، لأن<span class=\"mx\" dir=\"ltr\"> ٨ − ٥</span> لا تساوي<span class=\"mx\" dir=\"ltr\"> ٥ − ٨</span>", "نعم، دائمًا", "نعم، للأعداد الصغيرة فقط", "لا، لأن الطرح لا يوجد له ناتج"], "e": "<span class=\"mx\" dir=\"ltr\">٨ − ٥ = ٣</span> لكن<span class=\"mx\" dir=\"ltr\"> ٥ − ٨</span> لا يساوي ٣."}, {"lv": "متقدم", "q": "أي الجمل خاصيتها الإبدالية؟", "o": ["<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٨ + ١٫٩ + ٠٫١ = ١٫٩ + ٨ + ٠٫١</span></span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">(٦ + ٤) + ٩ = ٦ + (٤ + ٩)</span></span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">١٤ + ٠ = ١٤</span></span>", "<span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٨ × ٣ = ٣ × ٨ + ١</span></span>"], "e": "تبديل ترتيب الأعداد."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

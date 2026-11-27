@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "ما التحقق الصحيح من ناتج قسمة مع باقٍ؟", "o": ["الناتج × المقسوم عليه + الباقي = المقسوم", "الناتج + المقسوم عليه = المقسوم", "الناتج − الباقي = المقسوم", "الناتج × الباقي = المقسوم"], "e": "نضرب الناتج في المقسوم عليه ثم نجمع الباقي."}, {"lv": "سهل", "q": "ما ناتج ٧٢ ÷ ٣٦ ؟", "o": ["٢", "١", "٣", "١٢"], "e": "٣٦ × ٢ = ٧٢."}, {"lv": "سهل", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٩٦ ÷ ٢٤</span>؟", "o": ["٤", "٥", "٣", "٤٠"], "e": "٤ × ٢٤ = ٩٦."}, {"lv": "سهل", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٩١ ÷ ١٣</span>؟", "o": ["٧", "٨", "٦", "٧٠"], "e": "٧ × ١٣ = ٩١."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٣٩٦ ÷ ٣٦</span>؟", "o": ["١١", "١٢", "١٠", "١١٠"], "e": "١١ × ٣٦ = ٣٩٦."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٢٠٨ ÷ ٥٢</span>؟", "o": ["٤", "٥", "٣", "٤٠"], "e": "٤ × ٥٢ = ٢٠٨."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٣١٢ ÷ ٢٦</span>؟", "o": ["١٢", "١٣", "١١", "١٢٠"], "e": "١٢ × ٢٦ = ٣١٢."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٥٠٤ ÷ ٤٢</span>؟", "o": ["١٢", "١٣", "١١", "١٢٠"], "e": "١٢ × ٤٢ = ٥٠٤."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٦٤٥ ÷ ١٥</span>؟", "o": ["٤٣", "٤٤", "٤٢", "٤٣٠"], "e": "٤٣ × ١٥ = ٦٤٥."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٧٥١ ÷ ٣٠</span>؟", "o": ["٢٥ والباقي ١", "٢٦ والباقي ١", "٢٤ والباقي ١", "٢٥٠ والباقي ١"], "e": "٢٥ × ٣٠ + ١ = ٧٥١."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٤٨٧ ÷ ٢٣</span>؟", "o": ["٢١ والباقي ٤", "٢٢ والباقي ٤", "٢٠ والباقي ٤", "٢١٠ والباقي ٤"], "e": "٢١ × ٢٣ + ٤ = ٤٨٧."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٩٠٥ ÷ ٤٠</span>؟", "o": ["٢٢ والباقي ٢٥", "٢٣ والباقي ٢٥", "٢١ والباقي ٢٥", "٢٢٠ والباقي ٢٥"], "e": "٢٢ × ٤٠ + ٢٥ = ٩٠٥."}, {"lv": "متقدم", "q": "نُظّمت ٢٧٦ كرسيًا في صفوف، في كل صف ١٢ كرسيًا. كم صفًّا كاملًا؟", "o": ["٢٣ صفًّا", "٢٢ صفًّا", "٢٤ صفًّا", "٣٢ صفًّا"], "e": "١٢ × ٢٣ = ٢٧٦."}];
+    const Q=[{"lv": "سهل", "q": "ما التحقق الصحيح من ناتج قسمة مع باقٍ؟", "o": ["الناتج × المقسوم عليه + الباقي = المقسوم", "الناتج + المقسوم عليه = المقسوم", "الناتج − الباقي = المقسوم", "الناتج × الباقي = المقسوم"], "e": "نضرب الناتج في المقسوم عليه ثم نجمع الباقي."}, {"lv": "سهل", "q": "ما ناتج<span class=\"mx\" dir=\"ltr\"> ٧٢ ÷ ٣٦</span> ؟", "o": ["٢", "١", "٣", "١٢"], "e": "<span class=\"mx\" dir=\"ltr\">٣٦ × ٢ = ٧٢</span>."}, {"lv": "سهل", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٩٦ ÷ ٢٤</span></span>؟", "o": ["٤", "٥", "٣", "٤٠"], "e": "<span class=\"mx\" dir=\"ltr\">٤ × ٢٤ = ٩٦</span>."}, {"lv": "سهل", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٩١ ÷ ١٣</span></span>؟", "o": ["٧", "٨", "٦", "٧٠"], "e": "<span class=\"mx\" dir=\"ltr\">٧ × ١٣ = ٩١</span>."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٣٩٦ ÷ ٣٦</span></span>؟", "o": ["١١", "١٢", "١٠", "١١٠"], "e": "<span class=\"mx\" dir=\"ltr\">١١ × ٣٦ = ٣٩٦</span>."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٢٠٨ ÷ ٥٢</span></span>؟", "o": ["٤", "٥", "٣", "٤٠"], "e": "<span class=\"mx\" dir=\"ltr\">٤ × ٥٢ = ٢٠٨</span>."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٣١٢ ÷ ٢٦</span></span>؟", "o": ["١٢", "١٣", "١١", "١٢٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ × ٢٦ = ٣١٢</span>."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٥٠٤ ÷ ٤٢</span></span>؟", "o": ["١٢", "١٣", "١١", "١٢٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ × ٤٢ = ٥٠٤</span>."}, {"lv": "متوسط", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٦٤٥ ÷ ١٥</span></span>؟", "o": ["٤٣", "٤٤", "٤٢", "٤٣٠"], "e": "<span class=\"mx\" dir=\"ltr\">٤٣ × ١٥ = ٦٤٥</span>."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٧٥١ ÷ ٣٠</span></span>؟", "o": ["٢٥ والباقي ١", "٢٦ والباقي ١", "٢٤ والباقي ١", "٢٥٠ والباقي ١"], "e": "<span class=\"mx\" dir=\"ltr\">٢٥ × ٣٠ + ١ = ٧٥١</span>."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٤٨٧ ÷ ٢٣</span></span>؟", "o": ["٢١ والباقي ٤", "٢٢ والباقي ٤", "٢٠ والباقي ٤", "٢١٠ والباقي ٤"], "e": "<span class=\"mx\" dir=\"ltr\">٢١ × ٢٣ + ٤ = ٤٨٧</span>."}, {"lv": "متقدم", "q": "ما ناتج <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٩٠٥ ÷ ٤٠</span></span>؟", "o": ["٢٢ والباقي ٢٥", "٢٣ والباقي ٢٥", "٢١ والباقي ٢٥", "٢٢٠ والباقي ٢٥"], "e": "<span class=\"mx\" dir=\"ltr\">٢٢ × ٤٠ + ٢٥ = ٩٠٥</span>."}, {"lv": "متقدم", "q": "نُظّمت ٢٧٦ كرسيًا في صفوف، في كل صف ١٢ كرسيًا. كم صفًّا كاملًا؟", "o": ["٢٣ صفًّا", "٢٢ صفًّا", "٢٤ صفًّا", "٣٢ صفًّا"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ × ٢٣ = ٢٧٦</span>."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٣٩١ − ١٧٨ = ▢</span>", "o": ["٢١٣", "٢١٢", "٢٠٣", "٣١٣"], "e": "١١ − ٨ = ٣ و٨ − ٧ = ١ و٣ − ١ = ٢."}, {"lv": "سهل", "q": "نبدأ الطرح من:", "o": ["الآحاد", "المئات", "العشرات", "أي مكان"], "e": "نبدأ من اليمين."}, {"lv": "سهل", "q": "مئة واحدة تعادل:", "o": ["١٠ عشرات", "١٠ آحاد", "١٠ مئات", "١٠٠ عشرة"], "e": "١٠٠ = ١٠ × ١٠."}, {"lv": "سهل", "q": "للتحقق من الطرح نجمع الفرق مع:", "o": ["العدد المطروح", "العدد الأكبر", "ناتج الطرح نفسه", "صفر دائمًا"], "e": "الفرق + المطروح = الأصلي."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٥٤٢ − ١٦٧ = ▢</span>", "o": ["٣٧٥", "٣٨٥", "٣٧٤", "٤٧٥"], "e": "١٢ − ٧ = ٥، ثم ١٣ − ٦ = ٧، ثم ٤ − ١ = ٣."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٣١٧ − ١٩٨ = ▢</span>", "o": ["١١٩", "١١٨", "١٢٩", "٢١٩"], "e": "٧ آحاد لا تكفي لطرح ٨: ١٧ − ٨ = ٩، ثم العشرات ١٠ − ٩ = ١، ثم المئات ٢ − ١ = ١."}, {"lv": "متوسط", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٦٢٨ − ٢١٩ = ▢</span>", "o": ["٤٠٩", "٤١٩", "٤٠٨", "٣٠٩"], "e": "١٨ − ٩ = ٩ ثم ١ − ١ = ٠ ثم ٦ − ٢ = ٤."}, {"lv": "متوسط", "q": "مع سلمى ٤٥٠ ريالًا تبرعت بـ ١٨٣. كم بقي؟", "o": ["٢٦٧", "٢٧٧", "٣٦٧", "٢٦٣"], "e": "٤٥٠ − ١٨٣ = ٢٦٧."}, {"lv": "متوسط", "q": "كتاب فيه ٦٣٢ صفحة قرأ منه ٢٤٨. المتبقي:", "o": ["٣٨٤", "٣٩٤", "٣٨٤٠", "٤٨٤"], "e": "٦٣٢ − ٢٤٨ = ٣٨٤."}, {"lv": "متقدم", "q": "الرقم في ▢: ٥▢٢ − ١٨٧ = ٣٦٥", "o": ["٥", "٤", "٦", "٣"], "e": "٣٦٥ + ١٨٧ = ٥٥٢."}, {"lv": "متقدم", "q": "طرح عامر ٣٤٨ من ٧٠٢ فحصل على ٤٦٤. الحكم:", "o": ["خطأ والصحيح ٣٥٤", "صحيح", "خطأ والصحيح ٤٥٤", "خطأ والصحيح ٣٦٤"], "e": "٤٦٤ + ٣٤٨ لا يساوي ٧٠٢."}, {"lv": "متقدم", "q": "<span dir=\"rtl\" style=\"white-space:nowrap\">٣٤٢ − ١٧٩ = ▢</span>", "o": ["١٦٣", "١٧٣", "١٦٢", "٢٦٣"], "e": "١٢ − ٩ = ٣ ثم ١٣ − ٧ = ٦ ثم ٢ − ١ = ١."}, {"lv": "متقدم", "q": "قال خالد: ٣٥٠ − ١٧٩ = ١٨١. الخطأ أنه:", "o": ["لم يعد التجميع وقلب الطرح في كل منزلة", "جمع بدل أن يطرح", "بدأ من المئات فقط", "لا خطأ"], "e": "الصحيح ١٧١."}];
+    const Q=[{"lv": "سهل", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٣٩١ − ١٧٨ = ▢</span></span>", "o": ["٢١٣", "٢١٢", "٢٠٣", "٣١٣"], "e": "<span class=\"mx\" dir=\"ltr\">١١ − ٨ = ٣</span> و<span class=\"mx\" dir=\"ltr\">٨ − ٧ = ١</span> و<span class=\"mx\" dir=\"ltr\">٣ − ١ = ٢</span>."}, {"lv": "سهل", "q": "نبدأ الطرح من:", "o": ["الآحاد", "المئات", "العشرات", "أي مكان"], "e": "نبدأ من اليمين."}, {"lv": "سهل", "q": "مئة واحدة تعادل:", "o": ["١٠ عشرات", "١٠ آحاد", "١٠ مئات", "١٠٠ عشرة"], "e": "<span class=\"mx\" dir=\"ltr\">١٠٠ = ١٠ × ١٠</span>."}, {"lv": "سهل", "q": "للتحقق من الطرح نجمع الفرق مع:", "o": ["العدد المطروح", "العدد الأكبر", "ناتج الطرح نفسه", "صفر دائمًا"], "e": "الفرق + المطروح = الأصلي."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٥٤٢ − ١٦٧ = ▢</span></span>", "o": ["٣٧٥", "٣٨٥", "٣٧٤", "٤٧٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ − ٧ = ٥</span>، ثم<span class=\"mx\" dir=\"ltr\"> ١٣ − ٦ = ٧</span>، ثم<span class=\"mx\" dir=\"ltr\"> ٤ − ١ = ٣</span>."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٣١٧ − ١٩٨ = ▢</span></span>", "o": ["١١٩", "١١٨", "١٢٩", "٢١٩"], "e": "٧ آحاد لا تكفي لطرح ٨:<span class=\"mx\" dir=\"ltr\"> ١٧ − ٨ = ٩</span>، ثم العشرات<span class=\"mx\" dir=\"ltr\"> ١٠ − ٩ = ١</span>، ثم المئات<span class=\"mx\" dir=\"ltr\"> ٢ − ١ = ١</span>."}, {"lv": "متوسط", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٦٢٨ − ٢١٩ = ▢</span></span>", "o": ["٤٠٩", "٤١٩", "٤٠٨", "٣٠٩"], "e": "<span class=\"mx\" dir=\"ltr\">١٨ − ٩ = ٩</span> ثم<span class=\"mx\" dir=\"ltr\"> ١ − ١ = ٠</span> ثم<span class=\"mx\" dir=\"ltr\"> ٦ − ٢ = ٤</span>."}, {"lv": "متوسط", "q": "مع سلمى ٤٥٠ ريالًا تبرعت بـ ١٨٣. كم بقي؟", "o": ["٢٦٧", "٢٧٧", "٣٦٧", "٢٦٣"], "e": "<span class=\"mx\" dir=\"ltr\">٤٥٠ − ١٨٣ = ٢٦٧</span>."}, {"lv": "متوسط", "q": "كتاب فيه ٦٣٢ صفحة قرأ منه ٢٤٨. المتبقي:", "o": ["٣٨٤", "٣٩٤", "٣٨٤٠", "٤٨٤"], "e": "<span class=\"mx\" dir=\"ltr\">٦٣٢ − ٢٤٨ = ٣٨٤</span>."}, {"lv": "متقدم", "q": "المطروح منه مئاته ٥ وآحاده ٢. رقم عشراته إذا كان الفرق بعد طرح ١٨٧ هو ٣٦٥:", "o": ["٥", "٤", "٦", "٣"], "e": "<span class=\"mx\" dir=\"ltr\">٣٦٥ + ١٨٧ = ٥٥٢</span> والتحقق<span class=\"mx\" dir=\"ltr\"> ٥٥٢ − ١٨٧ = ٣٦٥</span>."}, {"lv": "متقدم", "q": "طرح عامر ٣٤٨ من ٧٠٢ فحصل على ٤٦٤. الحكم:", "o": ["خطأ والصحيح ٣٥٤", "صحيح", "خطأ والصحيح ٤٥٤", "خطأ والصحيح ٣٦٤"], "e": "<span class=\"mx\" dir=\"ltr\">٤٦٤ + ٣٤٨</span> لا يساوي ٧٠٢."}, {"lv": "متقدم", "q": "<span dir=\"ltr\" style=\"white-space:nowrap;unicode-bidi:isolate\"><span class=\"mx\" dir=\"ltr\">٣٤٢ − ١٧٩ = ▢</span></span>", "o": ["١٦٣", "١٧٣", "١٦٢", "٢٦٣"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ − ٩ = ٣</span> ثم<span class=\"mx\" dir=\"ltr\"> ١٣ − ٧ = ٦</span> ثم<span class=\"mx\" dir=\"ltr\"> ٢ − ١ = ١</span>."}, {"lv": "متقدم", "q": "قال خالد:<span class=\"mx\" dir=\"ltr\"> ٣٥٠ − ١٧٩ = ٢٢٩</span>. الخطأ أنه:", "o": ["لم يعد التجميع وقلب الطرح في كل منزلة", "جمع بدل أن يطرح", "بدأ من المئات فقط", "لا خطأ"], "e": "الصحيح ١٧١: بعد إعادة التجميع<span class=\"mx\" dir=\"ltr\"> ١٠ − ٩ = ١</span> و<span class=\"mx\" dir=\"ltr\">١٤ − ٧ = ٧</span> و<span class=\"mx\" dir=\"ltr\">٢ − ١ = ١</span>، والتحقق<span class=\"mx\" dir=\"ltr\"> ١٧١ + ١٧٩ = ٣٥٠</span>."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

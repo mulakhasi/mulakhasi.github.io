@@ -58,7 +58,7 @@
     function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
     function start(){
       app.innerHTML=`<h1>اختبار درس «الضرب في ٨»</h1>
-      <p style="margin-top:8px">الفصل ٥ · الدرس ٥-٥ (ص ١٥٨–١٥٩)</p>
+      <p style="margin-top:8px">الفصل ٥ · الدرس ٥-٥ (ص ١٥٨–١٦٠)</p>
       <p style="margin-top:8px;color:var(--mut)">${ar(Q.length)} سؤالًا تتدرّج من السهل إلى المتقدم. بعد كل إجابة ستعرف إن كانت صحيحة مع شرح الحل، وفي النهاية تظهر نتيجتك.</p>
       <button class="btn" id="go">ابدأ الاختبار</button>`;
       document.getElementById('go').onclick=()=>{order=Q.map((q,k)=>k);i=0;score=0;wrong=[];show()};

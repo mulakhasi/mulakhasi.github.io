@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "ما العملية العكسية للضرب؟", "o": ["القسمة", "الجمع", "الطرح", "الضرب"], "e": "القسمة تعكس الضرب."}, {"lv": "سهل", "q": "ماذا يعني ٣س في المعادلة ٣س = ١٥ ؟", "o": ["٣ مضروبًا في س", "٣ + س", "٣ − س", "٣ ÷ س"], "e": "العدد قبل المتغير مباشرة يعني الضرب."}, {"lv": "سهل", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٢ن = ١٤</span> ؟", "o": ["ن = ٧", "ن = ١٢", "ن = ١٦", "ن = ٨"], "e": "نقسم الطرفين على ٢: ن = ١٤ ÷ ٢ = ٧."}, {"lv": "سهل", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٣س = ١٥</span> ؟", "o": ["س = ٥", "س = ١٢", "س = ١٨", "س = ٦"], "e": "نقسم الطرفين على ٣: س = ١٥ ÷ ٣ = ٥."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٤ص = ٢٠</span> ؟", "o": ["ص = ٥", "ص = ١٦", "ص = ٢٤", "ص = ٦"], "e": "نقسم الطرفين على ٤: ص = ٢٠ ÷ ٤ = ٥."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٤٢ = ٦ع</span> ؟", "o": ["ع = ٧", "ع = ٣٦", "ع = ٤٨", "ع = ٨"], "e": "نقسم الطرفين على ٦: ع = ٤٢ ÷ ٦ = ٧."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٥٦ = ٧م</span> ؟", "o": ["م = ٨", "م = ٤٩", "م = ٦٣", "م = ٩"], "e": "نقسم الطرفين على ٧: م = ٥٦ ÷ ٧ = ٨."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٧٢ = ٨ن</span> ؟", "o": ["ن = ٩", "ن = ٦٤", "ن = ٨٠", "ن = ١٠"], "e": "نقسم الطرفين على ٨: ن = ٧٢ ÷ ٨ = ٩."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٥ك = ٣٥</span> ؟", "o": ["ك = ٧", "ك = ٣٠", "ك = ٤٠", "ك = ٨"], "e": "نقسم الطرفين على ٥: ك = ٣٥ ÷ ٥ = ٧."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">١٢ف = ٩٦</span> ؟", "o": ["ف = ٨", "ف = ٨٤", "ف = ١٠٨", "ف = ٩"], "e": "نقسم الطرفين على ١٢: ف = ٩٦ ÷ ١٢ = ٨."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">١٥ب = ٩٠</span> ؟", "o": ["ب = ٦", "ب = ٧٥", "ب = ١٠٥", "ب = ٧"], "e": "نقسم الطرفين على ١٥: ب = ٩٠ ÷ ١٥ = ٦."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٢٥ج = ١٥٠</span> ؟", "o": ["ج = ٦", "ج = ١٢٥", "ج = ١٧٥", "ج = ٧"], "e": "نقسم الطرفين على ٢٥: ج = ١٥٠ ÷ ٢٥ = ٦."}, {"lv": "متقدم", "q": "اشترى سالم ٤ أقلام ثمنها جميعًا ٢٨ ريالًا. ما ثمن القلم الواحد؟", "o": ["٧ ريالات", "٢٤ ريالًا", "٣٢ ريالًا", "٦ ريالات"], "e": "٤ ن = ٢٨ فتكون ن = ٢٨ ÷ ٤ = ٧."}];
+    const Q=[{"lv": "سهل", "q": "ما العملية العكسية للضرب؟", "o": ["القسمة", "الجمع", "الطرح", "الضرب"], "e": "القسمة تعكس الضرب."}, {"lv": "سهل", "q": "ماذا يعني ٣س في المعادلة ٣س = ١٥ ؟", "o": ["٣ مضروبًا في س", "٣ + س", "٣ − س", "٣ ÷ س"], "e": "العدد قبل المتغير مباشرة يعني الضرب."}, {"lv": "سهل", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٢ن = ١٤</span> ؟", "o": ["ن = ٧", "ن = ١٢", "ن = ١٦", "ن = ٨"], "e": "نقسم الطرفين على ٢: ن =<span class=\"mx\" dir=\"ltr\"> ١٤ ÷ ٢ = ٧</span>."}, {"lv": "سهل", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٣س = ١٥</span> ؟", "o": ["س = ٥", "س = ١٢", "س = ١٨", "س = ٦"], "e": "نقسم الطرفين على ٣: س =<span class=\"mx\" dir=\"ltr\"> ١٥ ÷ ٣ = ٥</span>."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٤ص = ٢٠</span> ؟", "o": ["ص = ٥", "ص = ١٦", "ص = ٢٤", "ص = ٦"], "e": "نقسم الطرفين على ٤: ص =<span class=\"mx\" dir=\"ltr\"> ٢٠ ÷ ٤ = ٥</span>."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\"><span class=\"mx\" dir=\"ltr\">٤٢ = ٦</span>ع</span> ؟", "o": ["ع = ٧", "ع = ٣٦", "ع = ٤٨", "ع = ٨"], "e": "نقسم الطرفين على ٦: ع =<span class=\"mx\" dir=\"ltr\"> ٤٢ ÷ ٦ = ٧</span>."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\"><span class=\"mx\" dir=\"ltr\">٥٦ = ٧</span>م</span> ؟", "o": ["م = ٨", "م = ٤٩", "م = ٦٣", "م = ٩"], "e": "نقسم الطرفين على ٧: م =<span class=\"mx\" dir=\"ltr\"> ٥٦ ÷ ٧ = ٨</span>."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\"><span class=\"mx\" dir=\"ltr\">٧٢ = ٨</span>ن</span> ؟", "o": ["ن = ٩", "ن = ٦٤", "ن = ٨٠", "ن = ١٠"], "e": "نقسم الطرفين على ٨: ن =<span class=\"mx\" dir=\"ltr\"> ٧٢ ÷ ٨ = ٩</span>."}, {"lv": "متوسط", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٥ك = ٣٥</span> ؟", "o": ["ك = ٧", "ك = ٣٠", "ك = ٤٠", "ك = ٨"], "e": "نقسم الطرفين على ٥: ك =<span class=\"mx\" dir=\"ltr\"> ٣٥ ÷ ٥ = ٧</span>."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">١٢ف = ٩٦</span> ؟", "o": ["ف = ٨", "ف = ٨٤", "ف = ١٠٨", "ف = ٩"], "e": "نقسم الطرفين على ١٢: ف =<span class=\"mx\" dir=\"ltr\"> ٩٦ ÷ ١٢ = ٨</span>."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">١٥ب = ٩٠</span> ؟", "o": ["ب = ٦", "ب = ٧٥", "ب = ١٠٥", "ب = ٧"], "e": "نقسم الطرفين على ١٥: ب =<span class=\"mx\" dir=\"ltr\"> ٩٠ ÷ ١٥ = ٦</span>."}, {"lv": "متقدم", "q": "ما حل المعادلة <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:900\">٢٥ج = ١٥٠</span> ؟", "o": ["ج = ٦", "ج = ١٢٥", "ج = ١٧٥", "ج = ٧"], "e": "نقسم الطرفين على ٢٥: ج =<span class=\"mx\" dir=\"ltr\"> ١٥٠ ÷ ٢٥ = ٦</span>."}, {"lv": "متقدم", "q": "اشترى سالم ٤ أقلام ثمنها جميعًا ٢٨ ريالًا. ما ثمن القلم الواحد؟", "o": ["٧ ريالات", "٢٤ ريالًا", "٣٢ ريالًا", "٦ ريالات"], "e": "٤ ن = ٢٨ فتكون ن =<span class=\"mx\" dir=\"ltr\"> ٢٨ ÷ ٤ = ٧</span>."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

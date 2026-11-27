@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "ما العوامل في ٣ × ٩ = ٢٧؟", "o": ["٣ و٩", "٢٧ فقط", "٣ و٢٧", "٩ و٢٧"], "e": "العوامل هي الأعداد المضروبة."}, {"lv": "سهل", "q": "ما ناتج ٣ × ٩٠٠؟", "o": ["٢٧٠٠", "٢٧٠", "٢٧٠٠٠", "٢٧"], "e": "٣ × ٩ = ٢٧ ثم صفران."}, {"lv": "سهل", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٥ × ٧٠</span>", "o": ["٣٥٠", "٣٥٠٠", "٣٥", "٣٦٠"], "e": "الحقيقة الأساسية ٥ × ٧ = ٣٥، ثم نكتب ١ من الأصفار عن اليمين: ٣٥٠"}, {"lv": "سهل", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٣ × ٢٠٠</span>", "o": ["٦٠٠", "٦٠٠٠", "٦٠", "٦١٠"], "e": "الحقيقة الأساسية ٣ × ٢ = ٦، ثم نكتب ٢ من الأصفار عن اليمين: ٦٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٤٠ × ٦٠</span>", "o": ["٢٤٠٠", "٢٤٠٠٠", "٢٤٠", "٢٥٠٠"], "e": "الحقيقة الأساسية ٤ × ٦ = ٢٤، ثم نكتب ٢ من الأصفار عن اليمين: ٢٤٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٧٠٠ × ٣٠</span>", "o": ["٢١٠٠٠", "٢١٠٠٠٠", "٢١٠٠", "٢٢٠٠٠"], "e": "الحقيقة الأساسية ٧ × ٣ = ٢١، ثم نكتب ٣ من الأصفار عن اليمين: ٢١٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٢٠٠٠ × ٨٠</span>", "o": ["١٦٠٠٠٠", "١٦٠٠٠٠٠", "١٦٠٠٠", "١٧٠٠٠٠"], "e": "الحقيقة الأساسية ٢ × ٨ = ١٦، ثم نكتب ٤ من الأصفار عن اليمين: ١٦٠٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٥٠ × ٤٠٠</span>", "o": ["٢٠٠٠٠", "٢٠٠٠٠٠", "٢٠٠٠", "٢١٠٠٠"], "e": "الحقيقة الأساسية ٥ × ٤ = ٢٠، ثم نكتب ٣ من الأصفار عن اليمين: ٢٠٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">٨٠٠ × ٦٠٠</span>", "o": ["٤٨٠٠٠٠", "٤٨٠٠٠٠٠", "٤٨٠٠٠", "٤٩٠٠٠٠"], "e": "الحقيقة الأساسية ٨ × ٦ = ٤٨، ثم نكتب ٤ من الأصفار عن اليمين: ٤٨٠٠٠٠"}, {"lv": "متقدم", "q": "تحمل سيارة ٥٠ صندوقًا كتلة كل صندوق ٢٠ كجم. ما الكتلة الكلية؟", "o": ["١٠٠٠ كجم", "١٠٠ كجم", "١٠٠٠٠ كجم", "٧٠ كجم"], "e": "٥ × ٢ = ١٠ ثم صفران."}, {"lv": "متقدم", "q": "أوجد العامل المجهول: ٦٠ × ؟ = ٢٤٠٠", "o": ["٤٠", "٤", "٤٠٠", "٣٠"], "e": "٢٤٠٠ ÷ ٦٠ = ٤٠."}, {"lv": "متقدم", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\">١٢٠٠ × ٥٠</span>", "o": ["٦٠٠٠٠", "٦٠٠٠٠٠", "٦٠٠٠", "٦١٠٠٠"], "e": "الحقيقة الأساسية ١٢ × ٥ = ٦٠، ثم نكتب ٣ من الأصفار عن اليمين: ٦٠٠٠٠"}, {"lv": "متقدم", "q": "قال أحمد: «٥٠ × ٢٠ = ١٠٠». هل هو على صواب؟", "o": ["لا، الناتج ١٠٠٠", "نعم", "لا، الناتج ١٠", "لا، الناتج ١٠٠٠٠"], "e": "٥ × ٢ = ١٠ ثم نضيف صفرين فيكون ١٠٠٠."}];
+    const Q=[{"lv": "سهل", "q": "ما العوامل في<span class=\"mx\" dir=\"ltr\"> ٣ × ٩ = ٢٧</span>؟", "o": ["٣ و٩", "٢٧ فقط", "٣ و٢٧", "٩ و٢٧"], "e": "العوامل هي الأعداد المضروبة."}, {"lv": "سهل", "q": "ما ناتج<span class=\"mx\" dir=\"ltr\"> ٣ × ٩٠٠</span>؟", "o": ["٢٧٠٠", "٢٧٠", "٢٧٠٠٠", "٢٧"], "e": "<span class=\"mx\" dir=\"ltr\">٣ × ٩ = ٢٧</span> ثم صفران."}, {"lv": "سهل", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٥ × ٧٠</span></span>", "o": ["٣٥٠", "٣٥٠٠", "٣٥", "٣٦٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٥ × ٧ = ٣٥</span>، ثم نكتب ١ من الأصفار عن اليمين: ٣٥٠"}, {"lv": "سهل", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٣ × ٢٠٠</span></span>", "o": ["٦٠٠", "٦٠٠٠", "٦٠", "٦١٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٣ × ٢ = ٦</span>، ثم نكتب ٢ من الأصفار عن اليمين: ٦٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٤٠ × ٦٠</span></span>", "o": ["٢٤٠٠", "٢٤٠٠٠", "٢٤٠", "٢٥٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٤ × ٦ = ٢٤</span>، ثم نكتب ٢ من الأصفار عن اليمين: ٢٤٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٧٠٠ × ٣٠</span></span>", "o": ["٢١٠٠٠", "٢١٠٠٠٠", "٢١٠٠", "٢٢٠٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٧ × ٣ = ٢١</span>، ثم نكتب ٣ من الأصفار عن اليمين: ٢١٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٢٠٠٠ × ٨٠</span></span>", "o": ["١٦٠٠٠٠", "١٦٠٠٠٠٠", "١٦٠٠٠", "١٧٠٠٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٢ × ٨ = ١٦</span>، ثم نكتب ٤ من الأصفار عن اليمين: ١٦٠٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٥٠ × ٤٠٠</span></span>", "o": ["٢٠٠٠٠", "٢٠٠٠٠٠", "٢٠٠٠", "٢١٠٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٥ × ٤ = ٢٠</span>، ثم نكتب ٣ من الأصفار عن اليمين: ٢٠٠٠٠"}, {"lv": "متوسط", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">٨٠٠ × ٦٠٠</span></span>", "o": ["٤٨٠٠٠٠", "٤٨٠٠٠٠٠", "٤٨٠٠٠", "٤٩٠٠٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ٨ × ٦ = ٤٨</span>، ثم نكتب ٤ من الأصفار عن اليمين: ٤٨٠٠٠٠"}, {"lv": "متقدم", "q": "تحمل سيارة ٥٠ صندوقًا كتلة كل صندوق ٢٠ كجم. ما الكتلة الكلية؟", "o": ["١٠٠٠ كجم", "١٠٠ كجم", "١٠٠٠٠ كجم", "٧٠ كجم"], "e": "<span class=\"mx\" dir=\"ltr\">٥ × ٢ = ١٠</span> ثم صفران."}, {"lv": "متقدم", "q": "أوجد العامل المجهول: ٦٠ × ؟ = ٢٤٠٠", "o": ["٤٠", "٤", "٤٠٠", "٣٠"], "e": "<span class=\"mx\" dir=\"ltr\">٢٤٠٠ ÷ ٦٠ = ٤٠</span>."}, {"lv": "متقدم", "q": "أوجد الناتج ذهنيًا: <span dir=\"ltr\" style=\"white-space:nowrap;font-weight:700\"><span class=\"mx\" dir=\"ltr\">١٢٠٠ × ٥٠</span></span>", "o": ["٦٠٠٠٠", "٦٠٠٠٠٠", "٦٠٠٠", "٦١٠٠٠"], "e": "الحقيقة الأساسية<span class=\"mx\" dir=\"ltr\"> ١٢ × ٥ = ٦٠</span>، ثم نكتب ٣ من الأصفار عن اليمين: ٦٠٠٠٠"}, {"lv": "متقدم", "q": "قال أحمد: «<span class=\"mx\" dir=\"ltr\">٥٠ × ٢٠ = ١٠٠</span>». هل هو على صواب؟", "o": ["لا، الناتج ١٠٠٠", "نعم", "لا، الناتج ١٠", "لا، الناتج ١٠٠٠٠"], "e": "<span class=\"mx\" dir=\"ltr\">٥ × ٢ = ١٠</span> ثم نضيف صفرين فيكون ١٠٠٠."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>

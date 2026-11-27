@@ -38,6 +38,7 @@
     .rev{margin-top:14px}.rev li{margin:8px 18px 0 0;font-size:15px}
     ol{list-style:arabic-indic}
     .rev .a{color:var(--g);font-weight:700}
+    .mx{unicode-bidi:bidi-override;direction:ltr;white-space:nowrap}
     .ex{display:inline-block;direction:rtl;unicode-bidi:isolate;font-weight:700;white-space:nowrap}
     .ex sup{font-size:.62em;line-height:0;vertical-align:super}
     .fb .ex{font-size:16px}
@@ -50,7 +51,7 @@
     <main><div class="card" id="app"></div></main>
     <footer>إعداد ملخّصي · اختبار تدريبي مساعد، ولا يُغني عن الكتاب المدرسي.</footer>
     <script>
-    const Q=[{"lv": "سهل", "q": "ما المتغير؟", "o": ["حرف أو رمز يمثّل عددًا مجهولًا", "عدد ثابت", "عملية حسابية", "ناتج الجمع"], "e": "مثل س في العبارة س + ٢."}, {"lv": "سهل", "q": "أي الكلمات تدل على الطرح؟", "o": ["أقل من", "زائد", "مجموع", "أكثر من"], "e": "«أقل من» و«الفرق» و«يقل بمقدار» تدل على الطرح."}, {"lv": "سهل", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">س + ٢</span> إذا كان س = ٣؟", "o": ["٥", "١", "٦", "٤"], "e": "٣ + ٢ = ٥."}, {"lv": "سهل", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص + ٤</span> إذا كان ص = ٥؟", "o": ["٩", "١", "١٠", "٨"], "e": "٥ + ٤ = ٩."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">س − ٣</span> إذا كان س = ٨؟", "o": ["٥", "١١", "٦", "٤"], "e": "٨ − ٣ = ٥."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص − ٥</span> إذا كان ص = ١٢؟", "o": ["٧", "١٧", "٨", "٦"], "e": "١٢ − ٥ = ٧."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ع − ٤</span> إذا كان ع = ١٠؟", "o": ["٦", "١٤", "٧", "٥"], "e": "١٠ − ٤ = ٦."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص + ١٢</span> إذا كان ص = ٩؟", "o": ["٢١", "٢٢", "٢٠", "٢٣"], "e": "٩ + ١٢ = ٢١."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ك − ٧</span> إذا كان ك = ١٥؟", "o": ["٨", "٢٢", "٩", "٧"], "e": "١٥ − ٧ = ٨."}, {"lv": "متقدم", "q": "ما العبارة الجبرية «أقل من ٢٠ بمقدار ك»؟", "o": ["٢٠ − ك", "ك − ٢٠", "٢٠ + ك", "ك + ٢٠"], "e": "نبدأ بالعدد ٢٠ ونطرح منه ك."}, {"lv": "متقدم", "q": "سجّل فهد ١٠ أهداف وسجّل سعد أقل منه بمقدار ن. كم هدفًا سجّل سعد إذا كان ن = ٤؟", "o": ["٦", "١٤", "٤", "١٠"], "e": "١٠ − ٤ = ٦."}, {"lv": "متقدم", "q": "ما العبارة التي تمثّل «مجموع ٥ وع»؟", "o": ["٥ + ع", "٥ − ع", "ع − ٥", "٥ × ع"], "e": "«مجموع» تدل على الجمع."}, {"lv": "متقدم", "q": "اشترى سالم ١٥ كتابًا واشترى أخوه أكثر منه بمقدار ب. كم كتابًا لأخيه إذا كان ب = ٦؟", "o": ["٢١", "٩", "٦", "١٥"], "e": "١٥ + ٦ = ٢١."}];
+    const Q=[{"lv": "سهل", "q": "ما المتغير؟", "o": ["حرف أو رمز يمثّل عددًا مجهولًا", "عدد ثابت", "عملية حسابية", "ناتج الجمع"], "e": "مثل س في العبارة س + ٢."}, {"lv": "سهل", "q": "أي الكلمات تدل على الطرح؟", "o": ["أقل من", "زائد", "مجموع", "أكثر من"], "e": "«أقل من» و«الفرق» و«يقل بمقدار» تدل على الطرح."}, {"lv": "سهل", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">س + ٢</span> إذا كان س = ٣؟", "o": ["٥", "١", "٦", "٤"], "e": "<span class=\"mx\" dir=\"ltr\">٣ + ٢ = ٥</span>."}, {"lv": "سهل", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص + ٤</span> إذا كان ص = ٥؟", "o": ["٩", "١", "١٠", "٨"], "e": "<span class=\"mx\" dir=\"ltr\">٥ + ٤ = ٩</span>."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">س − ٣</span> إذا كان س = ٨؟", "o": ["٥", "١١", "٦", "٤"], "e": "<span class=\"mx\" dir=\"ltr\">٨ − ٣ = ٥</span>."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص − ٥</span> إذا كان ص = ١٢؟", "o": ["٧", "١٧", "٨", "٦"], "e": "<span class=\"mx\" dir=\"ltr\">١٢ − ٥ = ٧</span>."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ع − ٤</span> إذا كان ع = ١٠؟", "o": ["٦", "١٤", "٧", "٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٠ − ٤ = ٦</span>."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ص + ١٢</span> إذا كان ص = ٩؟", "o": ["٢١", "٢٢", "٢٠", "٢٣"], "e": "<span class=\"mx\" dir=\"ltr\">٩ + ١٢ = ٢١</span>."}, {"lv": "متوسط", "q": "ما قيمة العبارة <span dir=\"rtl\" style=\"white-space:nowrap;font-weight:900\">ك − ٧</span> إذا كان ك = ١٥؟", "o": ["٨", "٢٢", "٩", "٧"], "e": "<span class=\"mx\" dir=\"ltr\">١٥ − ٧ = ٨</span>."}, {"lv": "متقدم", "q": "ما العبارة الجبرية «أقل من ٢٠ بمقدار ك»؟", "o": ["٢٠ − ك", "ك − ٢٠", "٢٠ + ك", "ك + ٢٠"], "e": "نبدأ بالعدد ٢٠ ونطرح منه ك."}, {"lv": "متقدم", "q": "سجّل فهد ١٠ أهداف وسجّل سعد أقل منه بمقدار ن. كم هدفًا سجّل سعد إذا كان ن = ٤؟", "o": ["٦", "١٤", "٤", "١٠"], "e": "<span class=\"mx\" dir=\"ltr\">١٠ − ٤ = ٦</span>."}, {"lv": "متقدم", "q": "ما العبارة التي تمثّل «مجموع ٥ وع»؟", "o": ["٥ + ع", "٥ − ع", "ع − ٥", "٥ × ع"], "e": "«مجموع» تدل على الجمع."}, {"lv": "متقدم", "q": "اشترى سالم ١٥ كتابًا واشترى أخوه أكثر منه بمقدار ب. كم كتابًا لأخيه إذا كان ب = ٦؟", "o": ["٢١", "٩", "٦", "١٥"], "e": "<span class=\"mx\" dir=\"ltr\">١٥ + ٦ = ٢١</span>."}];
     const app=document.getElementById('app');
     const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
     let order,i,score,wrong;
@@ -65,7 +66,7 @@
     function show(){
       const q=Q[order[i]];
       const opts=shuffle(q.o.map((t,k)=>[t,k]));
-      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span>الصحيحة: ${ar(score)}</span></div>
+      app.innerHTML=`<div class="prog"><span>السؤال ${ar(i+1)} من ${ar(Q.length)}</span><span id="sc" aria-live="polite">الصحيحة: ${ar(score)}</span></div>
       <div class="bar"><i style="width:${i/Q.length*100}%"></i></div>
       <span class="tag">${q.lv}</span>
       <div class="qt">${q.q}</div>
@@ -77,6 +78,8 @@
       const k=+btn.dataset.k, ok=k===0;
       app.querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(+b.dataset.k===0)b.classList.add('ok')});
       if(ok)score++;else{btn.classList.add('bad');wrong.push(order[i])}
+      document.getElementById('sc').textContent='الصحيحة: '+ar(score);
+      document.querySelector('.bar i').style.width=((i+1)/Q.length*100)+'%';
       const last=i===Q.length-1;
       document.getElementById('fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><b class="h">${ok?'إجابة صحيحة، أحسنت! 🌟':'ليست الإجابة الصحيحة.'}</b>${q.e}</div>
       <button class="btn" id="nx">${last?'عرض النتيجة':'السؤال التالي'}</button>`;
@@ -84,7 +87,7 @@
     }
     function result(){
       const pct=Math.round(score/Q.length*100);
-      const msg=pct>=90?'ممتاز! أنت جاهز للاختبار 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
+      const msg=pct>=90?'أتقنت أسئلة هذا التدريب. راجع أمثلة الدرس وجرّب مسألة بصياغة مختلفة 🏆':pct>=70?'جيد جدًّا، راجع الأسئلة التي أخطأت فيها 👍':'راجع الملخص مرّة أخرى ثم أعد المحاولة 💪';
       app.innerHTML=`<h1>نتيجتك</h1>
       <div class="score">${ar(score)} / ${ar(Q.length)}</div>
       <p class="msg">${msg}</p>
